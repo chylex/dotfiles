@@ -1,0 +1,207 @@
+@-moz-document url(chrome://browser/content/browser.xul), url(chrome://browser/content/browser.xhtml) {
+  
+  /* Fix broken window colors */
+  
+  #main-window {
+    background-color: #000c !important;
+  }
+  
+  #toolbar-menubar, #main-menubar, #TabsToolbar {
+    background-color: #000 !important;
+  }
+  
+  #main-menubar {
+    color: rgb(249, 249, 250) !important;
+    text-shadow: none !important;
+    border-radius: 0 !important;
+  }
+  
+  #TabsToolbar {
+    color: rgb(249, 249, 250) !important;
+    background-image: none !important;
+  }
+  
+  /* Menu bar */
+  
+  #main-menubar > menu {
+    padding-top: 1px !important;
+    margin-bottom: 2px !important;
+  }
+  
+  /* Back/forward buttons */
+  
+  #back-button .toolbarbutton-icon, #forward-button .toolbarbutton-icon {
+    padding: calc(var(--toolbarbutton-inner-padding) - 1px) var(--toolbarbutton-inner-padding) calc(var(--toolbarbutton-inner-padding) + 1px) !important;
+  }
+  
+  /* Reload/stop buttons */
+  
+  #reload-button, #stop-button {
+    display: -moz-box !important;
+  }
+  
+  #stop-reload-button .toolbarbutton-icon {
+    fill: var(--toolbarbutton-icon-fill) !important;
+    padding: var(--toolbarbutton-inner-padding) !important;
+  }
+  
+  #stop-reload-button .toolbarbutton-animatable-box {
+    display: none !important;
+  }
+  
+  /* Hide main menu items */
+  
+  #appMenu-fxa-status,
+  #appMenu-fxa-status + toolbarseparator,
+  #appMenu-library-button,
+  #appMenu-library-remotetabs-button,
+  #menu_importFromAnotherBrowser,
+  #menu_importFromAnotherBrowser + menuseparator,
+  #pageAction-panel-sendToDevice {
+    display: none;
+  }
+  
+  /* Hide context menu items */
+  
+  #context-navigation,
+  #context-sep-navigation,
+  #context-savepage,
+  #context-bookmarklink,
+  #context-sep-viewbgimage,
+  #context-sendlinktodevice,
+  #context-sep-sendlinktodevice,
+  #context-sendpagetodevice,
+  #context-sep-sendpagetodevice,
+  #context-setDesktopBackground {
+    display: none;
+  }
+  
+  /* Tabs & toolbars */
+  
+  #toolbar-menubar {
+    min-height: 21px !important;
+  }
+  
+  #TabsToolbar {
+    height: 27px !important;
+  }
+  
+  :root {
+    --tab-min-height: 27px !important;
+    --tab-block-margin: 0 !important;
+    --tab-border-radius: 0 !important;
+    --toolbar-start-end-padding: 0 !important;
+    --toolbarbutton-border-radius: 0 !important;
+    --toolbarbutton-outer-padding: 0 !important;
+    --toolbarbutton-inner-padding: 8px !important;
+  }
+  
+  tab {
+    border-top: 1px solid #484848 !important;
+  }
+  
+  .tabbrowser-tab {
+    padding-inline: 0 !important;
+    border-left: 1px solid #484848 !important;
+  }
+  
+  .tabbrowser-tab[first-visible-tab] {
+    border-inline-start: 1px solid #484848 !important;
+  }
+  
+  .tabbrowser-tab[last-visible-tab] {
+    border-inline-end: 1px solid #484848 !important;
+  }
+  
+  .tab-content {
+    padding-bottom: 2px !important;
+  }
+  
+  .tab-close-button {
+    opacity: 0.75;
+  }
+  
+  #tabs-newtab-button {
+    padding: 0 1px !important;
+  }
+  
+  /* Address bar */
+  
+  #urlbar-container {
+    --urlbar-container-height: 34px !important;
+    margin-top: -2px !important;
+    margin-inline: 3px !important;
+  }
+  
+  #urlbar {
+    margin: 1px 0 !important;
+  }
+  
+  #urlbar .urlbarView-row-inner {
+    padding-block: 4px !important;
+  }
+  
+  #urlbar .search-one-offs:not([hidden]){
+    padding-block: 4px !important;
+  }
+  
+  #urlbar .search-panel-one-offs-header-label {
+    margin-top: -2px !important;
+  }
+  
+  /* Bookmark bar */
+  
+  #PersonalToolbar {
+    -moz-window-dragging: no-drag;
+    display: -webkit-box !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 22px !important;
+    padding: 0 !important;
+    -moz-padding-start: 0 !important;
+    -moz-padding-end: 0 !important;
+    border-top: 1px solid var(--chrome-content-separator-color) !important;
+    background-color: #0E0E0E !important;
+    z-index: 1000 !important;
+  }
+  
+  #PersonalToolbar > toolbarspring {
+    max-width: none !important;
+  }
+  
+  #PersonalToolbar .toolbarbutton-1 {
+    margin: 0 !important;
+    padding: 3px 4px !important;
+  }
+  
+  #PersonalToolbar .toolbarbutton-icon {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  #main-window:not([inFullscreen = "true"]) #browser-bottombox {
+    height: 22px;
+  }
+  
+  /* PDF.js */
+  
+  notification[value = "pdfjs-fallback"] {
+    display: none;
+  }
+  
+  /* Update notifications */
+  
+  #PanelUI-menu-button {
+    list-style-image: url("chrome://browser/skin/menu.svg") !important;
+  }
+  
+  #PanelUI-menu-button .toolbarbutton-badge {
+    display: none !important;
+  }
+  
+  #appMenu-notification-popup,
+  #appMenu-update-available-notification {
+    display: none !important;
+  }
+}
