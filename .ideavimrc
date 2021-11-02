@@ -1,0 +1,205 @@
+set idearefactormode=visual
+set ignorecase
+set incsearch
+set number
+set relativenumber
+set scrolloff=12
+set sidescrolloff=48
+set showcmd
+set showmode
+set smartcase
+set virtualedit=onemore
+
+set exchange
+set highlightedyank
+set ideajoin
+set multiple-cursors
+set surround
+set textobj-indent
+
+" http://vimdoc.sourceforge.net/htmldoc/vimindex.html
+
+" Swap navigation after 'f' or 't'
+noremap ; ,
+noremap , ;
+
+" Navigate camel humps
+nnoremap L [w
+vnoremap L [w
+nnoremap H [b
+vnoremap H [b
+
+" Edit camel humps
+nnoremap cL c[w
+nnoremap cH c[b
+nnoremap cih [bc[w
+nnoremap dL d[w
+nnoremap dH d[b
+nnoremap dih [bd[w
+
+" Edit from cursor to start/end of parenthesized block
+nnoremap c) c])
+nnoremap d) d])
+nnoremap c( c[((
+nnoremap d( c[((<ESC>l
+
+" Edit from cursor to end of special characters
+nnoremap c" ct"
+nnoremap d" dt"
+nnoremap c' ct'
+nnoremap d' dt'
+nnoremap c] ct]
+nnoremap d] dt]
+
+" Alternative way to enter visual block mode
+nnoremap <Space>v <C-V>
+
+" Indent keeping selection
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" Turn capital letters into opposite actions
+nnoremap E ge
+nnoremap U :redo<CR>
+
+" Reselect pasted text
+nnoremap gp `[v`]
+
+" Rebind commands that will be repurposed
+nnoremap g0 gg
+nnoremap g$ G
+nnoremap M m
+
+" Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
+function! CompleteStatement()
+  if (renaming())
+    " TODO https://github.com/JetBrains/ideavim/discussions/397#discussioncomment-1573048
+    " return "\<Enter>"
+    return "<Enter>"
+  else
+    action EditorCompleteStatement
+    return ""
+  endif
+endfunction
+
+nmap <expr> <Enter> CompleteStatement()
+
+" Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
+nmap gb :raction GotoNextBookmark<CR>
+nmap gB :raction GotoPreviousBookmark<CR>
+nmap gc :raction VcsShowNextChangeMarker<CR>
+nmap gC :raction VcsShowPrevChangeMarker<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap gD :action GotoTypeDeclaration<CR>
+nmap ge :raction JumpToLastChange<CR>
+nmap gE :raction JumpToNextChange<CR>
+nmap gh :raction GotoNextError<CR>
+nmap gH :raction GotoPreviousError<CR>
+map gi :action GotoImplementation<CR>
+map gj :raction EditorCloneCaretBelow<CR>
+map gk :raction EditorCloneCaretAbove<CR>
+nmap gm :raction MethodDown<CR>
+nmap gM :raction MethodUp<CR>
+nmap go :raction GotoNextElementUnderCaretUsage<CR>
+nmap gO :raction GotoPrevElementUnderCaretUsage<CR>
+map gs :action GotoSuperMethod<CR>
+nmap gT /\\<class\>\\\|\\<interface\>\\\|\\<enum\>\\\|\\<object\>\\\|\\<record\>\\\|\\<struct\>\\\|\\<trait\><CR>w:nohlsearch<CR>
+nmap gt g0gT
+nmap gu :action ShowUsages<CR>
+nmap gU :action FindUsages<CR>
+map gz :action NextSplitter<CR>
+map gZ :action PrevSplitter<CR>
+
+" Make all 'g' commands work with 'G' too
+nmap Gb gb
+nmap GB gB
+nmap Gc gc
+nmap GC gC
+nmap Gd gd
+nmap GD gD
+nmap Ge ge
+nmap GE gE
+nmap Gh gh
+nmap GH gH
+map Gi gi
+map Gj gj
+map Gk gk
+nmap Gm gm
+nmap GM gM
+nmap Go go
+nmap GO gO
+map Gs gs
+nmap Gt gt
+nmap GT gT
+nmap Gu gu
+nmap GU gU
+map Gz gz
+map GZ gZ
+
+" Repurpose 'z' for view actions and tab management
+map za :action Annotate<CR>
+map zb :action ViewBreakpoints<CR>
+map zd :action QuickJavaDoc<CR>
+map ze :action ShowErrorDescription<CR>
+map zf :action SelectInProjectView<CR>
+map zht :action TypeHierarchy<CR>
+map zhm :action MethodHierarchy<CR>
+map zhc :action CallHierarchy<CR>
+map zm :action ShowBookmarks<CR>
+map zp :action QuickImplementations<CR>
+map zP :action QuickTypeDefinition<CR>
+map zsd :action MoveTabDown<CR>
+map zsr :action MoveTabRight<CR>
+map zsu :action Unsplit<CR>
+map zsU :action UnsplitAll<CR>
+
+" Repurpose 'm' for refactoring (normal mode)
+nmap mg :action Generate<CR>
+nmap mi :action Inline<CR>
+nmap mn :action RenameElement<CR>
+nmap ms :action ChangeSignature<CR>
+
+" Repurpose 'm' for refactoring (normal / visual mode)
+nmap mc :action IntroduceConstant<CR>
+vmap mc :action IntroduceConstant<CR>
+nmap mf :action IntroduceField<CR>
+vmap mf :action IntroduceField<CR>
+nmap mm :action ExtractMethod<CR>
+vmap mm :action ExtractMethod<CR>
+nmap mM :action ExtractFunction<CR>
+vmap mM :action ExtractFunction<CR>
+nmap mp :action IntroduceParameter<CR>
+vmap mp :action IntroduceParameter<CR>
+nmap mP :action IntroduceProperty<CR>
+vmap mP :action IntroduceProperty<CR>
+nmap mr :action Refactorings.QuickListPopupAction<CR>
+vmap mr :action Refactorings.QuickListPopupAction<CR>
+nmap mv :action IntroduceVariable<CR>
+vmap mv :action IntroduceVariable<CR>
+
+" Actions for custom version of AceJump
+" map <Space> <Plug>(easymotion-prefix)
+map <Space><Space> :action AceAction<CR>
+map <Space>a :action AceSpecialAction<CR>
+map <Space>m <Action>(AceSpecialAction)<Action>(AceSpecialAction)
+map <Space>s :action AceVimAction_JumpToChar<CR>
+map <Space>F :action AceVimAction_JumpToCharBeforeCaret<CR>
+map <Space>f :action AceVimAction_JumpToCharAfterCaret<CR>
+map <Space>w :action AceVimAction_LWordsAfterCaret<CR>
+map <Space>W :action AceVimAction_UWordsAfterCaret<CR>
+map <Space>b :action AceVimAction_LWordsBeforeCaret<CR>
+map <Space>B :action AceVimAction_UWordsBeforeCaret<CR>
+map <Space>e :action AceVimAction_LWordEndsAfterCaret<CR>
+map <Space>E :action AceVimAction_UWordEndsAfterCaret<CR>
+map <Space>ge :action AceVimAction_LWordEndsBeforeCaret<CR>
+map <Space>gE :action AceVimAction_UWordEndsBeforeCaret<CR>
+map <Space>h :action AceLineIndentsAction<CR>
+map <Space>l :action AceLineEndsAction<CR>
+map <Space>d :action AceVimAction_GoToDeclaration<CR>
+map <Space>D :action AceVimAction_GoToTypeDeclaration<CR>
+map <Space>i :action AceVimAction_ShowIntentions<CR>
+map <Space>u :action AceVimAction_ShowUsages<CR>
+map <Space>U :action AceVimAction_FindUsages<CR>
+map <Space>r :action AceVimAction_Refactor<CR>
+map <Space>n :action AceVimAction_Rename<CR>
