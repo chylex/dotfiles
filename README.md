@@ -1,6 +1,16 @@
+This is primarily for me to keep track of changes and synchronize my configuration, so there aren't many comments or other documentation at the moment, but I might improve that later.
+
 ### .ideavimrc
 
-[IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim) plugin for IntelliJ platform. Some parts require my [fork of IdeaVim](https://github.com/chylex/IntelliJ-IdeaVim/tree/customized/main), and my experimental [fork of AceJump](https://github.com/chylex/IntelliJ-AceJump/tree/experimental-rework).
+[IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim) plugin for IntelliJ platform. Some parts require my [fork of IdeaVim](https://github.com/chylex/IntelliJ-IdeaVim/tree/customized/main), and my experimental [fork of AceJump](https://github.com/chylex/IntelliJ-AceJump/tree/experimental-rework). Belongs in the user home directory.
+
+### .vimrc
+
+Configuration for [Vim](https://www.vim.org/). Belongs in the user home directory.
+
+### .bashrc
+
+Configuration for [Bash](https://www.gnu.org/software/bash/). Belongs in the user home directory.
 
 ### Firefox / userChrome.css
 
