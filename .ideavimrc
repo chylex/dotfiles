@@ -10,6 +10,7 @@ set showmode
 set smartcase
 set virtualedit=onemore
 
+set acejump
 set exchange
 set highlightedyank
 set ideajoin
@@ -206,22 +207,7 @@ nmap mv :action IntroduceVariable<CR>
 vmap mv :action IntroduceVariable<CR>
 
 " Actions for custom version of AceJump
-map <Space><Space> :action AceAction<CR>
-map <Space>a :action AceSpecialAction<CR>
-map <Space>m <Action>(AceSpecialAction)<Action>(AceSpecialAction)
-map <Space>s :action AceVimAction_JumpToChar<CR>
-map <Space>F :action AceVimAction_JumpToCharBeforeCaret<CR>
-map <Space>f :action AceVimAction_JumpToCharAfterCaret<CR>
-map <Space>w :action AceVimAction_LWordsAfterCaret<CR>
-map <Space>W :action AceVimAction_UWordsAfterCaret<CR>
-map <Space>b :action AceVimAction_LWordsBeforeCaret<CR>
-map <Space>B :action AceVimAction_UWordsBeforeCaret<CR>
-map <Space>e :action AceVimAction_LWordEndsAfterCaret<CR>
-map <Space>E :action AceVimAction_UWordEndsAfterCaret<CR>
-map <Space>ge :action AceVimAction_LWordEndsBeforeCaret<CR>
-map <Space>gE :action AceVimAction_UWordEndsBeforeCaret<CR>
-map <Space>h :action AceLineIndentsAction<CR>
-map <Space>l :action AceLineEndsAction<CR>
+map <Space> <Plug>(acejump)
 map <Space>d :action AceVimAction_GoToDeclaration<CR>
 map <Space>D :action AceVimAction_GoToTypeDeclaration<CR>
 map <Space>i :action AceVimAction_ShowIntentions<CR>
