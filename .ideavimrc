@@ -19,9 +19,37 @@ set textobj-indent
 
 " http://vimdoc.sourceforge.net/htmldoc/vimindex.html
 
+" Map top row on Czech keyboard layout to digits
+nnoremap + 1
+vnoremap + 1
+nnoremap ě 2
+vnoremap ě 2
+nnoremap š 3
+vnoremap š 3
+nnoremap č 4
+vnoremap č 4
+nnoremap ř 5
+vnoremap ř 5
+nnoremap ž 6
+vnoremap ž 6
+nnoremap ý 7
+vnoremap ý 7
+nnoremap á 8
+vnoremap á 8
+nnoremap í 9
+vnoremap í 9
+nnoremap é 0
+vnoremap é 0
+
 " Swap navigation after 'f' or 't'
 noremap ; ,
 noremap , ;
+
+" Navigate to indents
+nnoremap J +
+vnoremap J +
+nnoremap K -
+vnoremap K -
 
 " Navigate camel humps
 nnoremap L [w
@@ -60,7 +88,6 @@ vnoremap > >gv
 vnoremap = =gv
 
 " Turn capital letters into opposite actions
-nnoremap E ge
 nnoremap U :redo<CR>
 
 " Reselect pasted text
@@ -179,7 +206,6 @@ nmap mv :action IntroduceVariable<CR>
 vmap mv :action IntroduceVariable<CR>
 
 " Actions for custom version of AceJump
-" map <Space> <Plug>(easymotion-prefix)
 map <Space><Space> :action AceAction<CR>
 map <Space>a :action AceSpecialAction<CR>
 map <Space>m <Action>(AceSpecialAction)<Action>(AceSpecialAction)
