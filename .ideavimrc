@@ -21,26 +21,16 @@ set textobj-indent
 " http://vimdoc.sourceforge.net/htmldoc/vimindex.html
 
 " Map top row on Czech keyboard layout to digits
-nnoremap + 1
-vnoremap + 1
-nnoremap ě 2
-vnoremap ě 2
-nnoremap š 3
-vnoremap š 3
-nnoremap č 4
-vnoremap č 4
-nnoremap ř 5
-vnoremap ř 5
-nnoremap ž 6
-vnoremap ž 6
-nnoremap ý 7
-vnoremap ý 7
-nnoremap á 8
-vnoremap á 8
-nnoremap í 9
-vnoremap í 9
-nnoremap é 0
-vnoremap é 0
+map + 1
+map ě 2
+map š 3
+map č 4
+map ř 5
+map ž 6
+map ý 7
+map á 8
+map í 9
+map é 0
 
 " Swap navigation after 'f' or 't'
 noremap ; ,
@@ -95,8 +85,9 @@ nnoremap U :redo<CR>
 nnoremap gp `[v`]
 
 " Rebind commands that will be repurposed
-nnoremap g0 gg
-nnoremap g$ G
+nnoremap GG G
+nnoremap dG dG
+nnoremap cG cG
 nnoremap M m
 
 " Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
@@ -133,7 +124,7 @@ nmap go :raction GotoNextElementUnderCaretUsage<CR>
 nmap gO :raction GotoPrevElementUnderCaretUsage<CR>
 map gs :action GotoSuperMethod<CR>
 nmap gT /\\<class\>\\\|\\<interface\>\\\|\\<enum\>\\\|\\<object\>\\\|\\<record\>\\\|\\<struct\>\\\|\\<trait\><CR>w:nohlsearch<CR>
-nmap gt g0gT
+nmap gt gggT
 nmap gu :action ShowUsages<CR>
 nmap gU :action FindUsages<CR>
 map gz :action NextSplitter<CR>
