@@ -5,6 +5,7 @@ set incsearch
 set history=1024
 set hlsearch
 set mouse=a
+set noerrorbells
 set number
 set relativenumber
 set scrolloff=12
@@ -13,6 +14,7 @@ set showmatch
 set sidescrolloff=48
 set smartcase
 set tabstop=4
+set visualbell
 set wildmenu
 set wrap
 

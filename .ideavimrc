@@ -1,14 +1,16 @@
 set idearefactormode=visual
 set ignorecase
 set incsearch
+set noerrorbells
 set number
 set relativenumber
 set scrolloff=12
-set sidescrolloff=48
 set showcmd
 set showmode
+set sidescrolloff=48
 set smartcase
 set virtualedit=onemore
+set visualbell
 
 set acejump
 set exchange
