@@ -3,6 +3,7 @@ set ignorecase
 set incsearch
 set noerrorbells
 set number
+set putwithoutyank " Requires a custom version of IdeaVIM
 set relativenumber
 set scrolloff=12
 set showcmd
