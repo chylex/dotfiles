@@ -35,9 +35,9 @@ map á 8
 map í 9
 map é 0
 
-" Swap navigation after 'f' or 't'
-noremap ; ,
-noremap , ;
+" Move some commands closer on Czech keyboard layout
+noremap ů ;
+noremap § %
 
 " Navigate to indents
 nnoremap J +
