@@ -52,12 +52,12 @@ nnoremap H [b
 vnoremap H [b
 
 " Edit camel humps
-nnoremap cL c[w
-nnoremap cH c[b
-nnoremap cih [bc[w
-nnoremap dL d[w
-nnoremap dH d[b
-nnoremap dih [bd[w
+nnoremap dL :raction EditorDeleteToWordEndInDifferentHumpsMode<CR>
+nnoremap dH :raction EditorDeleteToWordStartInDifferentHumpsMode<CR>
+nmap dih dHdL " Only works in the middle of a hump
+nmap cL dLi
+nmap cH dHi
+nmap cih dihi
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
@@ -92,6 +92,7 @@ nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
 nnoremap M m
+nnoremap Z z
 
 " Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
 function! CompleteStatement()
@@ -107,25 +108,30 @@ endfunction
 
 nmap <expr> <Enter> CompleteStatement()
 
+" Repurpose special characters for navigation
+nmap ( :raction GotoPreviousError<CR>
+nmap ) :raction GotoNextError<CR>
+nmap [ :raction MethodUp<CR>
+nmap ] :raction MethodDown<CR>
+nmap { :raction JumpToLastChange<CR>
+nmap } :raction JumpToNextChange<CR>
+
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
 nmap gB :raction GotoPreviousBookmark<CR>
-nmap gc :raction VcsShowNextChangeMarker<CR>
-nmap gC :raction VcsShowPrevChangeMarker<CR>
 nmap gd :action GotoDeclaration<CR>
 nmap gD :action GotoTypeDeclaration<CR>
-nmap ge :raction JumpToLastChange<CR>
-nmap gE :raction JumpToNextChange<CR>
-nmap gh :raction GotoNextError<CR>
-nmap gH :raction GotoPreviousError<CR>
+nmap ge :raction VcsShowNextChangeMarker<CR>
+nmap gE :raction VcsShowPrevChangeMarker<CR>
 map gi :action GotoImplementation<CR>
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
-nmap gm :raction MethodDown<CR>
-nmap gM :raction MethodUp<CR>
 nmap go :raction GotoNextElementUnderCaretUsage<CR>
 nmap gO :raction GotoPrevElementUnderCaretUsage<CR>
+nmap gr :action RecentLocations<CR>
+nmap gR :action RecentChangedFiles<CR>
 map gs :action GotoSuperMethod<CR>
+map gS :action ShowSiblings<CR>
 nmap gT /\\<class\>\\\|\\<interface\>\\\|\\<enum\>\\\|\\<object\>\\\|\\<record\>\\\|\\<struct\>\\\|\\<trait\><CR>w:nohlsearch<CR>
 nmap gt gggT
 nmap gu :action ShowUsages<CR>
@@ -133,35 +139,24 @@ nmap gU :action FindUsages<CR>
 map gz :action NextSplitter<CR>
 map gZ :action PrevSplitter<CR>
 
-" Make all 'g' commands work with 'G' too
+" Make bidirectional 'g' commands work with 'G' too
 nmap Gb gb
 nmap GB gB
-nmap Gc gc
-nmap GC gC
-nmap Gd gd
-nmap GD gD
 nmap Ge ge
 nmap GE gE
-nmap Gh gh
-nmap GH gH
-map Gi gi
 map Gj gj
 map Gk gk
-nmap Gm gm
-nmap GM gM
 nmap Go go
 nmap GO gO
-map Gs gs
 nmap Gt gt
 nmap GT gT
-nmap Gu gu
-nmap GU gU
 map Gz gz
 map GZ gZ
 
-" Repurpose 'z' for view actions and tab management
+" Repurpose 'z' for view actions, debugger, and tab management
 map za :action Annotate<CR>
 map zb :action ViewBreakpoints<CR>
+map zc :action EditorContextInfo<CR>
 map zd :action QuickJavaDoc<CR>
 map ze :action ShowErrorDescription<CR>
 map zf :action SelectInProjectView<CR>
@@ -171,16 +166,22 @@ map zhc :action CallHierarchy<CR>
 map zm :action ShowBookmarks<CR>
 map zp :action QuickImplementations<CR>
 map zP :action QuickTypeDefinition<CR>
+map zr :action RunToCursor<CR>
+map zR :action ForceRunToCursor<CR>
 map zsd :action MoveTabDown<CR>
 map zsr :action MoveTabRight<CR>
 map zsu :action Unsplit<CR>
 map zsU :action UnsplitAll<CR>
+map zt :action ExpressionTypeInfo<CR>
+map zx :action EvaluateExpression<CR>
 
 " Repurpose 'm' for refactoring (normal mode)
 nmap mg :action Generate<CR>
 nmap mi :action Inline<CR>
 nmap mn :action RenameElement<CR>
+nmap mo :action OverrideMethods<CR>
 nmap ms :action ChangeSignature<CR>
+nmap mS :action NewScratchFile<CR>
 
 " Repurpose 'm' for refactoring (normal / visual mode)
 nmap mc :action IntroduceConstant<CR>
