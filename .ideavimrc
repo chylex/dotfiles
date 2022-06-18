@@ -3,7 +3,6 @@ set ignorecase
 set incsearch
 set noerrorbells
 set number
-set putwithoutyank " Requires a custom version of IdeaVIM
 set relativenumber
 set scrolloff=12
 set showcmd
@@ -14,11 +13,15 @@ set virtualedit=onemore
 set visualbell
 
 set acejump
+set argtextobj
 set exchange
 set highlightedyank
 set ideajoin
+set matchit
 set multiple-cursors
+set ReplaceWithRegister
 set surround
+set textobj-entire
 set textobj-indent
 
 " http://vimdoc.sourceforge.net/htmldoc/vimindex.html
@@ -37,7 +40,7 @@ map é 0
 
 " Move some commands closer on Czech keyboard layout
 noremap ů ;
-noremap § %
+map § %
 
 " Navigate to indents
 nnoremap J +
@@ -86,6 +89,9 @@ nnoremap U :redo<CR>
 
 " Reselect pasted text
 nnoremap gp `[v`]
+
+" Put without yank
+xmap p gr
 
 " Rebind commands that will be repurposed
 nnoremap GG G
