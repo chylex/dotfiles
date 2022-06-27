@@ -19,7 +19,6 @@ set highlightedyank
 set ideajoin
 set matchit
 set multiple-cursors
-set ReplaceWithRegister
 set surround
 set textobj-entire
 set textobj-indent
@@ -99,6 +98,7 @@ nnoremap dG dG
 nnoremap cG cG
 nnoremap M m
 nnoremap Z z
+map <A-S-n> <A-p>
 
 " Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
 function! CompleteStatement()
