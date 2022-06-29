@@ -19,6 +19,7 @@ set highlightedyank
 set ideajoin
 set matchit
 set multiple-cursors
+set ReplaceWithRegister
 set surround
 set textobj-entire
 set textobj-indent
