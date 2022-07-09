@@ -1,11 +1,14 @@
 set autoindent
 set encoding=utf-8
-set ignorecase
-set incsearch
 set history=1024
 set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
 set mouse=v
 set noerrorbells
+set noshowcmd
+set noshowmode
 set number
 set relativenumber
 set scrolloff=12
@@ -21,8 +24,8 @@ set wrap
 syntax enable
 colorscheme custom
 highlight LineNr    ctermfg=244
-highlight IncSearch ctermfg=251
-highlight Search    ctermfg=251
+highlight IncSearch ctermfg=251 ctermbg=238
+highlight Search    ctermfg=251 ctermbg=238
 highlight Visual    ctermfg=240 ctermbg=250
 
 " Map top row on Czech keyboard layout to digits
@@ -37,9 +40,9 @@ map á 8
 map í 9
 map é 0
 
-" Swap navigation after 'f' or 't'
-noremap ; ,
-noremap , ;
+" Move some commands closer on Czech keyboard layout
+noremap ů ;
+map § %
 
 " Navigate to indents
 nnoremap J +
@@ -74,6 +77,9 @@ nnoremap U :redo<CR>
 
 " Reselect pasted text
 nnoremap gp `[v`]
+
+" Put without yank
+xmap p gr
 
 " Plugin: https://github.com/easymotion/vim-easymotion.git
 map <Space> <Plug>(easymotion-prefix)
