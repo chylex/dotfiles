@@ -4,7 +4,7 @@ set ignorecase
 set incsearch
 set history=1024
 set hlsearch
-set mouse=a
+set mouse=v
 set noerrorbells
 set number
 set relativenumber
@@ -19,7 +19,7 @@ set wrap
 
 " Color scheme
 syntax enable
-colorscheme peachpuff
+colorscheme custom
 highlight LineNr    ctermfg=244
 highlight IncSearch ctermfg=251
 highlight Search    ctermfg=251
@@ -81,7 +81,6 @@ map <Space> <Plug>(easymotion-prefix)
 " Plugin: https://github.com/machakann/vim-highlightedyank
 let g:highlightedyank_highlight_duration = 500
 
-" Plugin: https://github.com/mg979/vim-visual-multi
-" Plugin: https://github.com/michaeljsmith/vim-indent-object.git
-" Plugin: https://tpope.io/vim/repeat.git
-" Plugin: https://tpope.io/vim/surround.git
+" Plugin: https://github.com/luochen1990/rainbow
+let g:rainbow_active = 1
+

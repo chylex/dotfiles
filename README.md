@@ -4,9 +4,11 @@ This is primarily for me to keep track of changes and synchronize my configurati
 
 [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim) plugin for IntelliJ platform. Some parts require my [fork of IdeaVim](https://github.com/chylex/IntelliJ-IdeaVim/tree/customized/main), and my experimental [fork of AceJump](https://github.com/chylex/IntelliJ-AceJump/tree/experimental-rework). Belongs in the user home directory.
 
-### .vimrc
+### .vimrc / .vim
 
 Configuration for [Vim](https://www.vim.org/). Belongs in the user home directory.
+
+To install plugins, navigate to `.vim/pack/plugins/start` and run `install.sh`. The script uses `git` to clone the plugin repositories.
 
 ### .bashrc
 
