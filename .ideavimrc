@@ -133,8 +133,6 @@ nmap gE :raction VcsShowPrevChangeMarker<CR>
 map gi :action GotoImplementation<CR>
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
-nmap go :raction GotoNextElementUnderCaretUsage<CR>
-nmap gO :raction GotoPrevElementUnderCaretUsage<CR>
 nmap gr :action RecentLocations<CR>
 nmap gR :action RecentChangedFiles<CR>
 map gs :action GotoSuperMethod<CR>
