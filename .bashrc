@@ -1,4 +1,4 @@
-alias lsa='ls -l -v --all --human-readable --group-directory-first --color=auto'
+alias lsa='ls -l -v --all --human-readable --group-directories-first --color=auto'
 alias gh='history|grep'
 
 bind "set completion-ignore-case on"
