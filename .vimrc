@@ -5,7 +5,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
-set mouse=v
+set mouse=a
 set noerrorbells
 set noshowcmd
 set noshowmode
