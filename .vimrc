@@ -20,6 +20,9 @@ set tabstop=4
 set wildmenu
 set wrap
 
+" Color support
+set t_Co=256
+
 " Color scheme
 syntax enable
 colorscheme custom
