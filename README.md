@@ -14,6 +14,10 @@ To install plugins, navigate to `.vim/pack/plugins/start` and run `install.sh`. 
 
 Configuration for [Bash](https://www.gnu.org/software/bash/). Belongs in the user home directory.
 
+### .tmux.conf
+
+Configuration for [tmux](https://github.com/tmux/tmux). Belongs in the user home directory.
+
 ### Firefox / userChrome.css
 
 Custom stylesheets for Firefox 94 or newer, designed for [Firefox Developer Edition](https://www.mozilla.org/firefox/developer). To install, place `userChrome.css` into the `chrome` folder:
