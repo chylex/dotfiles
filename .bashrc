@@ -12,6 +12,11 @@ alias dc='docker compose'
 alias dcud='docker compose up -d'
 alias dcul='docker compose up -d && docker compose logs -f'
 
+function dupdate() { docker compose build --pull && docker compose pull && docker compose up -d; }
+function dprune() { docker system prune --all --volumes --force; }
+
+function dlogs() { docker logs $1 2>&1; }
+function ddebug() { docker run --rm -it $1 /bin/$2; }
 function dbash() { docker exec -it "$1" /bin/bash; }
 function dsh() { docker exec -it "$1" /bin/sh; }
 
@@ -20,9 +25,6 @@ function dtop() { docker top $1 axo user:30,pid,pcpu,pmem,vsz,rss,tty,stat,start
 function dtopall() { for c in $(docker ps -q); do docker inspect $c -f "{{ .Name }}:"; docker top $c axo user:30,pid,comm | tail -n +2; echo "--------------"; done; }
 function dsubnets() { docker network inspect $(docker network ls | awk '$3 == "bridge" { print $1 }') | jq -r '.[] | .Name + " " + .IPAM.Config[0].Subnet' -; }
 function dmemlimit() { docker stats --no-stream --format "{{.MemUsage}}" | awk '{print $3}' | sort | sed 's/.$//' | numfmt --from=iec-i | awk '{s+=$1} END {printf "%.0f\n", s}' | numfmt --to=iec --format="%.3f"; }
-function dprune() { docker system prune --all --volumes --force; }
-function ddebug() { docker run --rm -it $1 /bin/$2; }
-function dlogs() { docker logs $1 2>&1; }
 
 export EDITOR=vim
 
