@@ -16,7 +16,7 @@ function dupdate() { docker compose build --pull && docker compose pull && docke
 function dprune() { docker system prune --all --volumes --force; }
 
 function dlogs() { docker logs $1 2>&1; }
-function ddebug() { docker run --rm -it $1 /bin/$2; }
+function ddebug() { docker run --rm -it --entrypoint "/bin/$2" "$1"; }
 function dbash() { docker exec -it "$1" /bin/bash; }
 function dsh() { docker exec -it "$1" /bin/sh; }
 
