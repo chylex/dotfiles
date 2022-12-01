@@ -33,3 +33,7 @@ if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 else
   PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
+if [ -x /usr/bin/tmux ] && [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_TTY" ]]; then
+  tmux new -A
+fi
