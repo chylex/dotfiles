@@ -91,6 +91,8 @@ nnoremap gp `[v`]
 xmap p gr
 
 " Rebind commands that will be repurposed
+nnoremap <A-b> ge
+nnoremap <A-S-b> gE
 nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
