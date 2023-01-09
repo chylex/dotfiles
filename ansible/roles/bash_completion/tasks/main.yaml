@@ -1,0 +1,15 @@
+---
+
+- when: shell == '/bin/bash'
+  block:
+    - name: Update .bash_completion file
+      copy:
+        src: .bash_completion
+        dest: ~/.bash_completion
+        mode: "600"
+
+    - name: Update custom bash completions
+      copy:
+        src: .bin/
+        dest: ~/.bin/
+        mode: "600"

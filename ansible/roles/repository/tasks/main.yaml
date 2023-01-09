@@ -1,0 +1,48 @@
+---
+
+- name: Clone dotfiles repository
+  git:
+    repo: "https://github.com/chylex/dotfiles.git"
+    dest: ~/.dotfiles
+    single_branch: true
+    recursive: false
+  register: dotfiles
+
+- when: dotfiles.changed and shell == '/bin/bash'
+  block:
+    - name: Load .bashrc contents
+      slurp:
+        src: ~/.dotfiles/.bashrc
+      register: bashrc
+
+    - name: Update .bashrc file
+      blockinfile:
+        block: "{{ bashrc.content | b64decode }}"
+        dest: ~/.bashrc
+        marker: "# {mark} CHYLEX DOTFILES"
+        mode: "644"
+        create: true
+
+- when: dotfiles.changed
+  block:
+    - name: Update .vimrc file
+      copy:
+        remote_src: true
+        src: ~/.dotfiles/.vimrc
+        dest: ~/.vimrc
+        mode: "600"
+
+    - name: Update .vim folder
+      copy:
+        remote_src: true
+        directory_mode: true
+        src: ~/.dotfiles/.vim
+        dest: ~/
+        mode: "700"
+
+    - name: Update .tmux.conf file
+      copy:
+        remote_src: true
+        src: ~/.dotfiles/.tmux.conf
+        dest: ~/.tmux.conf
+        mode: "600"

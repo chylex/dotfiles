@@ -1,5 +1,15 @@
 This is primarily for me to keep track of changes and synchronize my configuration, so there aren't many comments or other documentation at the moment, but I might improve that later.
 
+# Ansible
+
+This repository includes an Ansible collection that will automatically clone this repository into `~/.dotfiles`. It can be installed with:
+
+```shell
+ansible-galaxy collection install git+https://github.com/chylex/dotfiles.git#/ansible/
+```
+
+# Files
+
 ### .ideavimrc
 
 [IdeaVim](https://plugins.jetbrains.com/plugin/164-ideavim) plugin for IntelliJ platform. Some parts require my [fork of IdeaVim](https://github.com/chylex/IntelliJ-IdeaVim/tree/customized/main), and my experimental [fork of AceJump](https://github.com/chylex/IntelliJ-AceJump/tree/experimental-rework). Belongs in the user home directory.
@@ -8,7 +18,7 @@ This is primarily for me to keep track of changes and synchronize my configurati
 
 Configuration for [Vim](https://www.vim.org/). Belongs in the user home directory.
 
-To install plugins, navigate to `.vim/pack/plugins/start` and run `install.sh`. The script uses `git` to clone the plugin repositories.
+You can install the vim plugins using the `chylex.dotfiles.vim_plugins` Ansible role, or manually by cloning git repositories listed in the [task file](ansible/roles/vim_plugins/tasks/main.yaml) into `~/.vim/pack/plugins/start`.
 
 ### .bashrc
 

@@ -1,0 +1,5 @@
+. ~/.bin/complete_alias
+. ~/.bin/docker_compose
+
+complete -F _complete_alias d
+complete -F _docker_compose dc

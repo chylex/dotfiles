@@ -1,0 +1,10 @@
+---
+
+- name: Detect shell
+  shell: "echo $SHELL"
+  register: shell
+  changed_when: false
+
+- name: Set shell fact
+  set_fact:
+    shell: "{{ shell.stdout }}"

@@ -1,0 +1,11 @@
+namespace: chylex
+name: dotfiles
+version: 1.0.0
+
+readme: README.md
+license: [ Unlicense ]
+authors: [ "chylex <contact@chylex.com>" ]
+
+homepage: https://github.com/chylex/dotfiles
+repository: https://github.com/chylex/dotfiles
+issues: https://github.com/chylex/dotfiles/issues
