@@ -44,14 +44,29 @@ map í 9
 map é 0
 
 " Move some commands closer on Czech keyboard layout
+nnoremap ú @@
 noremap ů ;
 map § %
+
+" Navigate to end of previous word
+nnoremap <A-b> ge
+nnoremap <A-S-b> gE
 
 " Navigate to indents
 nnoremap J +
 vnoremap J +
 nnoremap K -
 vnoremap K -
+
+" Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
+map L <Plug>CamelCaseMotion_w
+map H <Plug>CamelCaseMotion_b
+
+" Edit camel humps (https://github.com/vim-scripts/camelcasemotion)
+omap iL <Plug>CamelCaseMotion_iw
+xmap iL <Plug>CamelCaseMotion_iw
+omap iH <Plug>CamelCaseMotion_ib
+xmap iH <Plug>CamelCaseMotion_ib
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])

@@ -39,8 +39,13 @@ map í 9
 map é 0
 
 " Move some commands closer on Czech keyboard layout
+nnoremap ú @@
 noremap ů ;
 map § %
+
+" Navigate to end of previous word
+nnoremap <A-b> ge
+nnoremap <A-S-b> gE
 
 " Navigate to indents
 nnoremap J +
@@ -84,6 +89,9 @@ vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
 
+" Turn capital letters into opposite actions
+" nnoremap U :redo<CR> " Handled by custom version of IdeaVim
+
 " Reselect pasted text
 nnoremap gp `[v`]
 
@@ -91,8 +99,6 @@ nnoremap gp `[v`]
 xmap p gr
 
 " Rebind commands that will be repurposed
-nnoremap <A-b> ge
-nnoremap <A-S-b> gE
 nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
