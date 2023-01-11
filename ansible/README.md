@@ -12,13 +12,17 @@ Configures Bash completion for `d` alias for Docker, and `dc` alias for Docker C
 
 Sets the `shell` fact to the remote user's default shell.
 
-### `chylex.dotfiles.repository`
+### `chylex.dotfiles.from_repository`
 
 Clones the dotfiles repository into `~/.dotfiles` and updates the user's dotfiles. **Do not use if you already use the `~/.dotfiles` folder for something else!**
 
 ### `chylex.dotfiles.vim_plugins`
 
 Installs a bunch of Vim plugins.
+
+### `chylex.dotfiles.all`
+
+Does all of the above.
 
 # Licensing
 

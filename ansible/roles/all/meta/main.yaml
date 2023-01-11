@@ -1,0 +1,6 @@
+---
+
+dependencies:
+  - role: from_repository
+  - role: bash_completion
+  - role: vim_plugins
