@@ -74,13 +74,11 @@ nnoremap d) d])
 nnoremap c( c[((
 nnoremap d( c[((<ESC>l
 
-" Edit from cursor to end of special characters
-nnoremap c" ct"
-nnoremap d" dt"
-nnoremap c' ct'
-nnoremap d' dt'
-nnoremap c] ct]
-nnoremap d] dt]
+" Delete lines
+nnoremap C cc
+nnoremap D dd
+vnoremap C cc
+vnoremap D dd
 
 " Alternative way to enter visual block mode
 nnoremap <Space>v <C-V>
