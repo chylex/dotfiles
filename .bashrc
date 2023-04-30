@@ -26,6 +26,8 @@ function dtopall() { for c in $(docker ps -q); do docker inspect $c -f "{{ .Name
 function dsubnets() { docker network inspect $(docker network ls | awk '$3 == "bridge" { print $1 }') | jq -r '.[] | .Name + " " + .IPAM.Config[0].Subnet' -; }
 function dmemlimit() { docker stats --no-stream --format "{{.MemUsage}}" | awk '{print $3}' | sort | sed 's/.$//' | numfmt --from=iec-i | awk '{s+=$1} END {printf "%.0f\n", s}' | numfmt --to=iec --format="%.3f"; }
 
+function borgsize() { printf 'Archive\t\t\tOrig\tComp\tDedup\n'; printf '%-16.16s\t%s\t%s\t%s\n' $(borg info --json --sort-by name --glob-archives '*' "$1" | jq '.archives[] | "\(.name) \(.stats.original_size) \(.stats.compressed_size) \(.stats.deduplicated_size)"' | sed --expression='s/^"//;s/"$//' | numfmt --field='2-4' --to=iec); }
+
 export EDITOR=vim
 
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
