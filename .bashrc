@@ -6,6 +6,7 @@ bind '"\e[B": history-search-forward'
 
 alias lsa='ls -l -v --all --human-readable --group-directories-first --color=auto'
 alias gh='history|grep'
+alias mc='mc -x'
 
 alias d='docker'
 alias dc='docker compose'
