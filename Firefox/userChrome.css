@@ -1,26 +1,5 @@
 @-moz-document url(chrome://browser/content/browser.xul), url(chrome://browser/content/browser.xhtml) {
   
-  /* Fix broken window colors */
-  
-  #main-window {
-    background-color: #000c !important;
-  }
-  
-  #toolbar-menubar, #main-menubar, #TabsToolbar {
-    background-color: #000 !important;
-  }
-  
-  #main-menubar {
-    color: rgb(249, 249, 250) !important;
-    text-shadow: none !important;
-    border-radius: 0 !important;
-  }
-  
-  #TabsToolbar {
-    color: rgb(249, 249, 250) !important;
-    background-image: none !important;
-  }
-  
   /* Menu bar */
   
   #main-menubar > menu {
@@ -37,7 +16,7 @@
   /* Reload/stop buttons */
   
   #reload-button, #stop-button {
-    display: -moz-box !important;
+    display: flex !important;
   }
   
   #stop-reload-button .toolbarbutton-icon {
@@ -86,6 +65,10 @@
     height: 27px !important;
   }
   
+  .tab-label-container {
+    height: auto !important;
+  }
+  
   :root {
     --tab-min-height: 27px !important;
     --tab-block-margin: 0 !important;
@@ -102,15 +85,11 @@
   
   .tabbrowser-tab {
     padding-inline: 0 !important;
+    border-right: 1px solid #484848 !important;
+  }
+  
+  .tabbrowser-tab[first-visible-unpinned-tab] {
     border-left: 1px solid #484848 !important;
-  }
-  
-  .tabbrowser-tab[first-visible-tab] {
-    border-inline-start: 1px solid #484848 !important;
-  }
-  
-  .tabbrowser-tab[last-visible-tab] {
-    border-inline-end: 1px solid #484848 !important;
   }
   
   .tab-content {
@@ -153,7 +132,7 @@
   
   #PersonalToolbar {
     -moz-window-dragging: no-drag;
-    display: -webkit-box !important;
+    display: flex !important;
     position: fixed !important;
     bottom: 0 !important;
     width: 100% !important;
@@ -170,6 +149,10 @@
     max-width: none !important;
   }
   
+  #PersonalToolbar .toolbaritem-combined-buttons {
+    margin-inline: 0 !important;
+  }
+  
   #PersonalToolbar .toolbarbutton-1 {
     margin: 0 !important;
     padding: 3px 4px !important;
@@ -180,8 +163,8 @@
     height: 14px !important;
   }
   
-  #main-window:not([inFullscreen = "true"]) #browser-bottombox {
-    height: 22px;
+  #main-window:not([inFullscreen = "true"]) #browser {
+    margin-bottom: 22px;
   }
   
   /* PDF.js */
