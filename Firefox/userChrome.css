@@ -155,7 +155,8 @@
   
   #PersonalToolbar .toolbarbutton-1 {
     margin: 0 !important;
-    padding: 3px 4px !important;
+    padding: 3px 0 !important;
+    --toolbarbutton-inner-padding: 6px !important;
   }
   
   #PersonalToolbar .toolbarbutton-icon {
