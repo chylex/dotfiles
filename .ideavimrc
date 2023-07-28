@@ -212,11 +212,20 @@ nmap mv :action IntroduceVariable<CR>
 vmap mv :action IntroduceVariable<CR>
 
 " Actions for custom version of AceJump
-map <Space> <Plug>(acejump)
-map <Space>d :action AceVimAction_GoToDeclaration<CR>
-map <Space>D :action AceVimAction_GoToTypeDeclaration<CR>
-map <Space>i :action AceVimAction_ShowIntentions<CR>
-map <Space>u :action AceVimAction_ShowUsages<CR>
-map <Space>U :action AceVimAction_FindUsages<CR>
-map <Space>r :action AceVimAction_Refactor<CR>
-map <Space>n :action AceVimAction_Rename<CR>
+map <Space><Space> :action AceVimAction_JumpAllEditors<CR>
+map <Space>f :action AceVimAction_JumpForward<CR>
+map <Space>F :action AceVimAction_JumpBackward<CR>
+map <Space>t :action AceVimAction_JumpTillForward<CR>
+map <Space>T :action AceVimAction_JumpTillBackward<CR>
+map <Space>l :action AceVimAction_JumpOnLineForward<CR>
+map <Space>h :action AceVimAction_JumpOnLineBackward<CR>
+map <Space>j :action AceVimAction_JumpLineIndentsForward<CR>
+map <Space>k :action AceVimAction_JumpLineIndentsBackward<CR>
+map <Space>w :action AceVimAction_JumpLWordForward<CR>
+map <Space>W :action AceVimAction_JumpUWordForward<CR>
+map <Space>b :action AceVimAction_JumpLWordBackward<CR>
+map <Space>B :action AceVimAction_JumpUWordBackward<CR>
+map <Space>e :action AceVimAction_JumpLWordEndForward<CR>
+map <Space>E :action AceVimAction_JumpUWordEndForward<CR>
+map <Space><A-b>   :action AceVimAction_JumpLWordEndBackward<CR>
+map <Space><A-S-b> :action AceVimAction_JumpUWordEndBackward<CR>
