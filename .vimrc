@@ -5,6 +5,7 @@ set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
+set listchars=space:·,tab:>·,trail:~,extends:>,precedes:<
 set mouse=a
 set noerrorbells
 set noshowcmd
