@@ -4,9 +4,9 @@ bind "set show-all-if-ambiguous on"
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
-alias lsa='ls -l -v --all --human-readable --group-directories-first --color=auto'
 alias gh='history|grep'
-alias mc='mc -x'
+alias less='less --mouse'
+alias lsa='ls -l -v --all --human-readable --group-directories-first --color=auto'
 
 alias d='docker'
 alias dc='docker compose'
