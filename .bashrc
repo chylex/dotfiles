@@ -29,6 +29,8 @@ function dmemlimit() { docker stats --no-stream --format "{{.MemUsage}}" | awk '
 
 function borgsize() { printf 'Archive\t\t\tOrig\tComp\tDedup\n'; printf '%-16.16s\t%s\t%s\t%s\n' $(borg info --json --sort-by name --glob-archives '*' "$1" | jq '.archives[] | "\(.name) \(.stats.original_size) \(.stats.compressed_size) \(.stats.deduplicated_size)"' | sed --expression='s/^"//;s/"$//' | numfmt --field='2-4' --to=iec); }
 
+function convflac() { (set -e; for f in *."$1"; do n="${f%.*}"; ffmpeg -i "$n.$1" -compression_level 12 "$n.flac"; exiftool -TagsFromFile "$n.$1" "-all:all>all:all" "$n.flac"; done;) }
+
 export EDITOR=vim
 
 if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
