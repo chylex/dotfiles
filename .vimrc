@@ -12,10 +12,10 @@ set noshowcmd
 set noshowmode
 set number
 set relativenumber
-set scrolloff=12
+set scrolloff=999
 set shiftwidth=0
 set showmatch
-set sidescrolloff=48
+set sidescrolloff=999
 set smartcase
 set tabstop=4
 set wildmenu
