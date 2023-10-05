@@ -1,28 +1,29 @@
-set idearefactormode=visual
 set ignorecase
 set incsearch
-set noerrorbells
 set number
 set relativenumber
-set scrolloff=12
+set scrolloff=999
 set showcmd
 set showmode
-set sidescrolloff=48
+set sidescrolloff=999
 set smartcase
 set virtualedit=onemore
 set visualbell
 
-set acejump
-set argtextobj
-set exchange
-set highlightedyank
+set ideaglobalmode
 set ideajoin
-set matchit
-set multiple-cursors
-set ReplaceWithRegister
-set surround
-set textobj-entire
-set textobj-indent
+set idearefactormode=visual
+
+Plug 'argtextobj.vim'
+Plug 'nerdtree'
+Plug 'vim-ReplaceWithRegister'
+Plug 'vim-exchange'
+Plug 'vim-highlightedyank'
+Plug 'vim-indent-object'
+Plug 'vim-matchit'
+Plug 'vim-multiple-cursors'
+Plug 'vim-surround'
+Plug 'vim-textobj-entire'
 
 " http://vimdoc.sourceforge.net/htmldoc/vimindex.html
 
@@ -212,6 +213,7 @@ nmap mv :action IntroduceVariable<CR>
 vmap mv :action IntroduceVariable<CR>
 
 " Actions for custom version of AceJump
+set acejump
 map <Space><Space> :action AceVimAction_JumpAllEditors<CR>
 map <Space>f :action AceVimAction_JumpForward<CR>
 map <Space>F :action AceVimAction_JumpBackward<CR>
