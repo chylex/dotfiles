@@ -53,6 +53,12 @@ map § %
 nnoremap <A-b> ge
 nnoremap <A-S-b> gE
 
+" Navigate soft-wrapped lines
+nnoremap <expr> j v:count ? 'j' : 'gj'
+vnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+vnoremap <expr> k v:count ? 'k' : 'gk'
+
 " Navigate to indents
 nnoremap J +
 vnoremap J +
