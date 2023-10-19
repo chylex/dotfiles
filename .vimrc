@@ -11,6 +11,7 @@ set noerrorbells
 set noshowcmd
 set noshowmode
 set number
+set nrformats-=octal
 set relativenumber
 set scrolloff=999
 set shiftwidth=0

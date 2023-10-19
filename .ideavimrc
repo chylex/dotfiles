@@ -1,6 +1,7 @@
 set ignorecase
 set incsearch
 set number
+set nrformats-=octal
 set relativenumber
 set scrolloff=999
 set showcmd
@@ -103,6 +104,10 @@ vnoremap K -
 noremap <A-h> gT
 noremap <A-l> gt
 noremap <C-w> :action CloseContent<CR>
+
+" Increment/decrement numbers
+nnoremap <Space>+ <C-a>
+nnoremap <Space>- <C-x>
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
