@@ -82,8 +82,9 @@ nnoremap D dd
 vnoremap C cc
 vnoremap D dd
 
-" Alternative way to enter visual block mode
+" Enter visual block mode
 nnoremap <Space>v <C-V>
+onoremap <Space>v <C-V>
 
 " Indent keeping selection
 vnoremap < <gv
