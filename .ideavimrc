@@ -96,6 +96,9 @@ nnoremap <A-S-b> gE
 " Navigate and close tabs
 noremap <A-h> gT
 noremap <A-l> gt
+inoremap <A-h> <C-o>gT
+inoremap <A-l> <C-o>gt
+
 noremap <C-w> :action CloseContent<CR>
 
 " Increment/decrement numbers
