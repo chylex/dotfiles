@@ -4,10 +4,13 @@ set history=1024
 set hlsearch
 set ignorecase
 set incsearch
+set infercase
 set laststatus=2
+set linebreak
 set listchars=space:·,tab:>·,trail:~,extends:>,precedes:<
 set mouse=a
 set noerrorbells
+set nomodeline
 set noshowcmd
 set noshowmode
 set number
@@ -15,15 +18,20 @@ set nrformats-=octal
 set relativenumber
 set scrolloff=999
 set shiftwidth=0
+set showbreak=↪
 set showmatch
 set sidescrolloff=999
 set smartcase
 set tabstop=4
+set ttymouse=xterm2
 set wildmenu
 set wrap
 
-" Color support
-set t_Co=256
+" Show full description for lines and bytes
+set shortmess-=l
+
+" Show search count
+set shortmess-=S
 
 " Color scheme
 syntax enable
