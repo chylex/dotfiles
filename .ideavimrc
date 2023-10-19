@@ -168,6 +168,9 @@ nmap ] :raction MethodDown<CR>
 nmap { :raction JumpToLastChange<CR>
 nmap } :raction JumpToNextChange<CR>
 
+nmap <Space>( :raction KM.GotoPreviousErrorInOtherMode<CR>
+nmap <Space>) :raction KM.GotoNextErrorInOtherMode<CR>
+
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
 nmap gB :raction GotoPreviousBookmark<CR>
@@ -182,8 +185,8 @@ nmap gr :action RecentLocations<CR>
 nmap gR :action RecentChangedFiles<CR>
 nmap gs :action GotoSuperMethod<CR>
 nmap gS :action ShowSiblings<CR>
-nmap gT /\\<class\>\\\|\\<interface\>\\\|\\<enum\>\\\|\\<object\>\\\|\\<record\>\\\|\\<struct\>\\\|\\<trait\><CR>w:nohlsearch<CR>
-nmap gt gggT
+map gt :raction KM.GotoNextTypeInFile<CR>
+map gT :raction KM.GotoPreviousTypeInFile<CR>
 nmap gu :action ShowUsages<CR>
 nmap gU :action FindUsages<CR>
 map gz :action NextSplitter<CR>
@@ -236,6 +239,7 @@ map zt :action ExpressionTypeInfo<CR>
 map zx :action EvaluateExpression<CR>
 
 " Repurpose 'm' for refactoring (normal mode)
+nmap md :action SafeDelete<CR>
 nmap mg :action Generate<CR>
 nmap mi :action Inline<CR>
 nmap mn :action RenameElement<CR>
@@ -260,6 +264,8 @@ nmap mr :action Refactorings.QuickListPopupAction<CR>
 vmap mr :action Refactorings.QuickListPopupAction<CR>
 nmap mv :action IntroduceVariable<CR>
 vmap mv :action IntroduceVariable<CR>
+nmap mw :action SurroundWith<CR>
+vmap mw :action SurroundWith<CR>
 
 " Actions for custom version of AceJump
 set acejump
