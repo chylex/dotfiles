@@ -147,19 +147,8 @@ nnoremap M m
 nnoremap Z z
 noremap \\ <C-w>
 
-" Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
-function! CompleteStatement()
-  if (renaming())
-    " TODO https://github.com/JetBrains/ideavim/discussions/397#discussioncomment-1573048
-    " return "\<Enter>"
-    return "<Enter>"
-  else
-    action EditorCompleteStatement
-    return ""
-  endif
-endfunction
-
-nmap <expr> <Enter> CompleteStatement()
+" Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
+nmap <Enter> :action EditorCompleteStatement<CR>
 
 " Repurpose special characters for navigation
 nmap ( :raction GotoPreviousError<CR>
