@@ -19,7 +19,6 @@ if has('win32')
 endif
 
 " Configure IDEA settings (https://github.com/JetBrains/ideavim/wiki/set-commands)
-set ideaglobalmode
 set ideajoin
 set idearefactormode=visual
 
