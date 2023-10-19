@@ -144,7 +144,6 @@ nnoremap cG cG
 nnoremap M m
 nnoremap Z z
 noremap \\ <C-w>
-noremap <A-S-n> <A-p>
 
 " Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
 function! CompleteStatement()
