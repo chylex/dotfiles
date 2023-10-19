@@ -10,10 +10,51 @@ set smartcase
 set virtualedit=onemore
 set visualbell
 
+" Use WSL bash as shell
+if has('win32')
+  set shell=bash.exe
+  set shellcmdflag=-lic
+  set shellxquote=
+endif
+
+" Configure IDEA settings (https://github.com/JetBrains/ideavim/wiki/set-commands)
 set ideaglobalmode
 set ideajoin
 set idearefactormode=visual
 
+" Configure IDE keybindings (https://github.com/JetBrains/ideavim/wiki/sethandler)
+sethandler <C-A> a:ide
+sethandler <C-B> a:ide
+sethandler <C-C> a:ide
+sethandler <C-E> a:ide
+sethandler <C-F> a:ide
+sethandler <C-G> a:ide
+sethandler <C-I> a:ide
+sethandler <C-J> a:ide
+sethandler <C-K> a:ide
+sethandler <C-L> a:ide
+sethandler <C-M> a:ide
+sethandler <C-R> a:ide
+sethandler <C-S> a:ide
+sethandler <C-T> a:ide
+sethandler <C-V> a:ide
+sethandler <C-X> a:ide
+sethandler <C-Y> a:ide
+sethandler <C-\> a:ide
+
+sethandler <A-H> a:vim
+sethandler <A-L> a:vim
+sethandler <A-P> a:vim
+sethandler <A-X> a:vim
+sethandler <C-D> a:vim
+sethandler <C-I> a:vim
+sethandler <C-N> a:vim
+sethandler <C-O> a:vim
+sethandler <C-P> a:vim
+sethandler <C-U> a:vim
+sethandler <C-W> a:vim
+
+" Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
 Plug 'nerdtree'
 Plug 'vim-ReplaceWithRegister'
@@ -25,7 +66,7 @@ Plug 'vim-multiple-cursors'
 Plug 'vim-surround'
 Plug 'vim-textobj-entire'
 
-" http://vimdoc.sourceforge.net/htmldoc/vimindex.html
+" https://vimhelp.org/index.txt.html
 
 " Map top row on Czech keyboard layout to digits
 map + 1
@@ -54,6 +95,11 @@ vnoremap J +
 nnoremap K -
 vnoremap K -
 
+" Navigate and close tabs
+noremap <A-h> gT
+noremap <A-l> gt
+noremap <C-w> :action CloseContent<CR>
+
 " Navigate camel humps
 nnoremap L [w
 vnoremap L [w
@@ -80,7 +126,7 @@ nnoremap D dd
 vnoremap C cc
 vnoremap D dd
 
-" Alternative way to enter visual block mode
+" Enter visual block mode
 nnoremap <Space>v <C-V>
 
 " Indent keeping selection
@@ -97,13 +143,18 @@ nnoremap gp `[v`]
 " Put without yank
 xmap p gr
 
+" Show parameter info
+nmap <A-p> <Action>(ParameterInfo)
+imap <A-p> <Action>(ParameterInfo)
+
 " Rebind commands that will be repurposed
 nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
 nnoremap M m
 nnoremap Z z
-map <A-S-n> <A-p>
+noremap \\ <C-w>
+noremap <A-S-n> <A-p>
 
 " Repurpose 'Enter' for statement completion (renaming function requires a custom version of IdeaVIM)
 function! CompleteStatement()
@@ -134,15 +185,13 @@ nmap gd :action GotoDeclaration<CR>
 nmap gD :action GotoTypeDeclaration<CR>
 nmap ge :raction VcsShowNextChangeMarker<CR>
 nmap gE :raction VcsShowPrevChangeMarker<CR>
-map gi :action GotoImplementation<CR>
+nmap gi :action GotoImplementation<CR>
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
-nmap go :raction GotoNextElementUnderCaretUsage<CR>
-nmap gO :raction GotoPrevElementUnderCaretUsage<CR>
 nmap gr :action RecentLocations<CR>
 nmap gR :action RecentChangedFiles<CR>
-map gs :action GotoSuperMethod<CR>
-map gS :action ShowSiblings<CR>
+nmap gs :action GotoSuperMethod<CR>
+nmap gS :action ShowSiblings<CR>
 nmap gT /\\<class\>\\\|\\<interface\>\\\|\\<enum\>\\\|\\<object\>\\\|\\<record\>\\\|\\<struct\>\\\|\\<trait\><CR>w:nohlsearch<CR>
 nmap gt gggT
 nmap gu :action ShowUsages<CR>
@@ -157,8 +206,6 @@ nmap Ge ge
 nmap GE gE
 map Gj gj
 map Gk gk
-nmap Go go
-nmap GO gO
 nmap Gt gt
 nmap GT gT
 map Gz gz
@@ -171,18 +218,30 @@ map zc :action EditorContextInfo<CR>
 map zd :action QuickJavaDoc<CR>
 map ze :action ShowErrorDescription<CR>
 map zf :action SelectInProjectView<CR>
+
 map zht :action TypeHierarchy<CR>
 map zhm :action MethodHierarchy<CR>
 map zhc :action CallHierarchy<CR>
+
 map zm :action ShowBookmarks<CR>
 map zp :action QuickImplementations<CR>
 map zP :action QuickTypeDefinition<CR>
+
+map zqa :action CloseAllEditors<CR>
+map zqh :action CloseAllToTheLeft<CR>
+map zql :action CloseAllToTheRight<CR>
+map zqo :action CloseAllEditorsButActive<CR>
+map zqq :action CloseContent<CR>
+map zqu :action ReopenClosedTab<CR>
+
 map zr :action RunToCursor<CR>
 map zR :action ForceRunToCursor<CR>
+
 map zsd :action MoveTabDown<CR>
 map zsr :action MoveTabRight<CR>
 map zsu :action Unsplit<CR>
 map zsU :action UnsplitAll<CR>
+
 map zt :action ExpressionTypeInfo<CR>
 map zx :action EvaluateExpression<CR>
 
