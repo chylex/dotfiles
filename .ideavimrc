@@ -94,12 +94,6 @@ noremap H [b
 nnoremap <A-b> ge
 nnoremap <A-S-b> gE
 
-" Navigate to indents
-nnoremap J +
-vnoremap J +
-nnoremap K -
-vnoremap K -
-
 " Navigate and close tabs
 noremap <A-h> gT
 noremap <A-l> gt

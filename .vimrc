@@ -60,12 +60,6 @@ vnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 vnoremap <expr> k v:count ? 'k' : 'gk'
 
-" Navigate to indents
-nnoremap J +
-vnoremap J +
-nnoremap K -
-vnoremap K -
-
 " Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
 map L <Plug>CamelCaseMotion_w
 map H <Plug>CamelCaseMotion_b
