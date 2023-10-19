@@ -85,6 +85,10 @@ nnoremap ú @@
 noremap ů ;
 map § %
 
+" Camel humps
+noremap L [w
+noremap H [b
+
 " Navigate to end of previous word
 nnoremap <A-b> ge
 nnoremap <A-S-b> gE
@@ -99,20 +103,6 @@ vnoremap K -
 noremap <A-h> gT
 noremap <A-l> gt
 noremap <C-w> :action CloseContent<CR>
-
-" Navigate camel humps
-nnoremap L [w
-vnoremap L [w
-nnoremap H [b
-vnoremap H [b
-
-" Edit camel humps
-nnoremap dL :raction EditorDeleteToWordEndInDifferentHumpsMode<CR>
-nnoremap dH :raction EditorDeleteToWordStartInDifferentHumpsMode<CR>
-nmap dih dHdL " Only works in the middle of a hump
-nmap cL dLi
-nmap cH dHi
-nmap cih dihi
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
