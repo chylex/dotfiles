@@ -27,9 +27,29 @@ function dtopall() { for c in $(docker ps -q); do docker inspect $c -f "{{ .Name
 function dsubnets() { docker network inspect $(docker network ls | awk '$3 == "bridge" { print $1 }') | jq -r '.[] | .Name + " " + .IPAM.Config[0].Subnet' -; }
 function dmemlimit() { docker stats --no-stream --format "{{.MemUsage}}" | awk '{print $3}' | sort | sed 's/.$//' | numfmt --from=iec-i | awk '{s+=$1} END {printf "%.0f\n", s}' | numfmt --to=iec --format="%.3f"; }
 
-function borgsize() { printf 'Archive\t\t\tOrig\tComp\tDedup\n'; printf '%-16.16s\t%s\t%s\t%s\n' $(borg info --json --sort-by name --glob-archives '*' "$1" | jq '.archives[] | "\(.name) \(.stats.original_size) \(.stats.compressed_size) \(.stats.deduplicated_size)"' | sed --expression='s/^"//;s/"$//' | numfmt --field='2-4' --to=iec); }
+function ssh() {
+  if [ -n "${TMUX_PANE}" ]; then
+    tmux rename-window -t"${TMUX_PANE}" "$*"
+    command ssh "$@"
+    tmux set-window-option automatic-rename "on"
+  else
+    command ssh "$@"
+  fi
+}
 
-function convflac() { (set -e; for f in *."$1"; do n="${f%.*}"; ffmpeg -i "$n.$1" -compression_level 12 "$n.flac"; exiftool -TagsFromFile "$n.$1" "-all:all>all:all" "$n.flac"; done;) }
+function borgsize() {
+  printf 'Archive\t\t\tOrig\tComp\tDedup\n'
+  printf '%-16.16s\t%s\t%s\t%s\n' $(borg info --json --sort-by name --glob-archives '*' "$1" | jq '.archives[] | "\(.name) \(.stats.original_size) \(.stats.compressed_size) \(.stats.deduplicated_size)"' | sed --expression='s/^"//;s/"$//' | numfmt --field='2-4' --to=iec)
+}
+
+function convflac() {(
+  set -e
+  for f in *."$1"; do
+    n="${f%.*}"
+    ffmpeg -i "$n.$1" -compression_level 12 "$n.flac"
+    exiftool -TagsFromFile "$n.$1" "-all:all>all:all" "$n.flac"
+  done
+)}
 
 export EDITOR=vim
 
