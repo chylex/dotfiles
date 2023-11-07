@@ -59,8 +59,8 @@ noremap ů ;
 map § %
 
 " Navigate to end of previous word
-nnoremap <A-b> ge
-nnoremap <A-S-b> gE
+noremap <A-b> ge
+noremap <A-S-b> gE
 
 " Navigate soft-wrapped lines
 nnoremap <expr> j v:count ? 'j' : 'gj'

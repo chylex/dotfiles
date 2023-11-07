@@ -42,9 +42,11 @@ sethandler <C-X> a:ide
 sethandler <C-Y> a:ide
 sethandler <C-\> a:ide
 
+sethandler <A-B> a:vim
 sethandler <A-H> a:vim
 sethandler <A-L> a:vim
 sethandler <A-P> a:vim
+sethandler <A-S-B> a:vim
 sethandler <A-X> a:vim
 sethandler <C-D> a:vim
 sethandler <C-I> a:vim
@@ -92,8 +94,8 @@ vnoremap L ]w
 vnoremap H ]b
 
 " Navigate to end of previous word
-nnoremap <A-b> ge
-nnoremap <A-S-b> gE
+noremap <A-b> ge
+noremap <A-S-b> gE
 
 " Navigate and close tabs
 noremap <A-h> gT
