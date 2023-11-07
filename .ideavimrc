@@ -88,6 +88,8 @@ map § %
 " Camel humps
 noremap L [w
 noremap H [b
+vnoremap L ]w
+vnoremap H ]b
 
 " Navigate to end of previous word
 nnoremap <A-b> ge
