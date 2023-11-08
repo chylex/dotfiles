@@ -137,6 +137,10 @@ nnoremap gp `[v`]
 " Put without yank
 xmap p gr
 
+" Navigate back/forward
+nmap <BS> <Action>(Back)
+nmap <S-BS> <Action>(Forward)
+
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
 imap <A-p> <Action>(ParameterInfo)
