@@ -91,8 +91,7 @@ vnoremap C cc
 vnoremap D dd
 
 " Enter visual block mode
-nnoremap <Space>v <C-V>
-onoremap <Space>v <C-V>
+noremap <Bar>v <C-V>
 
 " Indent keeping selection
 vnoremap < <gv
@@ -110,7 +109,9 @@ xnoremap p P
 xnoremap P p
 
 " Plugin: https://github.com/easymotion/vim-easymotion.git
-map <Space> <Plug>(easymotion-prefix)
+nmap <Space> <Plug>(easymotion-overwin-f)
+xmap <Space> <Plug>(easymotion-s)
+omap <Space> <Plug>(easymotion-s)
 
 " Plugin: https://github.com/machakann/vim-highlightedyank
 let g:highlightedyank_highlight_duration = 500

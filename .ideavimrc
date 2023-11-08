@@ -105,8 +105,8 @@ inoremap <A-l> <C-o>gt
 noremap <C-w> :action CloseContent<CR>
 
 " Increment/decrement numbers
-nnoremap <Space>+ <C-a>
-nnoremap <Space>- <C-x>
+nnoremap <Bar>+ <C-a>
+nnoremap <Bar>- <C-x>
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
@@ -121,8 +121,7 @@ vnoremap C cc
 vnoremap D dd
 
 " Enter visual block mode
-nnoremap <Space>v <C-V>
-onoremap <Space>v <C-V>
+noremap <Bar>v <C-V>
 
 " Indent keeping selection
 vnoremap < <gv
@@ -166,9 +165,6 @@ nmap ] :raction MethodDown<CR>
 nmap { :raction JumpToLastChange<CR>
 nmap } :raction JumpToNextChange<CR>
 
-nmap <Space>( :raction KM.GotoPreviousErrorInOtherMode<CR>
-nmap <Space>) :raction KM.GotoNextErrorInOtherMode<CR>
-
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
 nmap gB :raction GotoPreviousBookmark<CR>
@@ -189,6 +185,8 @@ nmap gu :action ShowUsages<CR>
 nmap gU :action FindUsages<CR>
 map gz :action NextSplitter<CR>
 map gZ :action PrevSplitter<CR>
+nmap g( :raction KM.GotoPreviousErrorInOtherMode<CR>
+nmap g) :raction KM.GotoNextErrorInOtherMode<CR>
 
 " Make bidirectional 'g' commands work with 'G' too
 nmap Gb gb
@@ -267,20 +265,4 @@ vmap mw :action SurroundWith<CR>
 
 " Actions for custom version of AceJump
 set acejump
-map <Space><Space> :action AceVimAction_JumpAllEditors<CR>
-map <Space>f :action AceVimAction_JumpForward<CR>
-map <Space>F :action AceVimAction_JumpBackward<CR>
-map <Space>t :action AceVimAction_JumpTillForward<CR>
-map <Space>T :action AceVimAction_JumpTillBackward<CR>
-map <Space>l :action AceVimAction_JumpOnLineForward<CR>
-map <Space>h :action AceVimAction_JumpOnLineBackward<CR>
-map <Space>j :action AceVimAction_JumpLineIndentsForward<CR>
-map <Space>k :action AceVimAction_JumpLineIndentsBackward<CR>
-map <Space>w :action AceVimAction_JumpLWordForward<CR>
-map <Space>W :action AceVimAction_JumpUWordForward<CR>
-map <Space>b :action AceVimAction_JumpLWordBackward<CR>
-map <Space>B :action AceVimAction_JumpUWordBackward<CR>
-map <Space>e :action AceVimAction_JumpLWordEndForward<CR>
-map <Space>E :action AceVimAction_JumpUWordEndForward<CR>
-map <Space><A-b>   :action AceVimAction_JumpLWordEndBackward<CR>
-map <Space><A-S-b> :action AceVimAction_JumpUWordEndBackward<CR>
+map <Space> :action AceVimAction_JumpAllEditors<CR>
