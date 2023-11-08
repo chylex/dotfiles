@@ -57,6 +57,18 @@ map é 0
 nnoremap ú @@
 noremap ů ;
 map § %
+sunmap §
+
+" Camel humps (https://github.com/vim-scripts/camelcasemotion)
+map L <Plug>CamelCaseMotion_w
+map H <Plug>CamelCaseMotion_b
+sunmap L
+sunmap H
+
+omap iL <Plug>CamelCaseMotion_iw
+xmap iL <Plug>CamelCaseMotion_iw
+omap iH <Plug>CamelCaseMotion_ib
+xmap iH <Plug>CamelCaseMotion_ib
 
 " Navigate to end of previous word
 noremap <A-b> ge
@@ -64,19 +76,9 @@ noremap <A-S-b> gE
 
 " Navigate soft-wrapped lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
-vnoremap <expr> j v:count ? 'j' : 'gj'
+xnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
-vnoremap <expr> k v:count ? 'k' : 'gk'
-
-" Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
-map L <Plug>CamelCaseMotion_w
-map H <Plug>CamelCaseMotion_b
-
-" Edit camel humps (https://github.com/vim-scripts/camelcasemotion)
-omap iL <Plug>CamelCaseMotion_iw
-xmap iL <Plug>CamelCaseMotion_iw
-omap iH <Plug>CamelCaseMotion_ib
-xmap iH <Plug>CamelCaseMotion_ib
+xnoremap <expr> k v:count ? 'k' : 'gk'
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
@@ -86,17 +88,17 @@ nnoremap d( c[((<ESC>l
 
 " Delete lines
 nnoremap C cc
+xnoremap C cc
 nnoremap D dd
-vnoremap C cc
-vnoremap D dd
+xnoremap D dd
 
 " Enter visual block mode
 noremap <Bar>v <C-V>
 
 " Indent keeping selection
-vnoremap < <gv
-vnoremap > >gv
-vnoremap = =gv
+xnoremap < <gv
+xnoremap > >gv
+xnoremap = =gv
 
 " Turn capital letters into opposite actions
 nnoremap U :redo<CR>

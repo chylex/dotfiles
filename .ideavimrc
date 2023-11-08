@@ -89,8 +89,8 @@ map § %
 " Camel humps
 noremap L [w
 noremap H [b
-vnoremap L ]w
-vnoremap H ]b
+xnoremap L ]w
+xnoremap H ]b
 
 " Navigate to end of previous word
 noremap <A-b> ge
@@ -116,17 +116,17 @@ nnoremap d( c[((<ESC>l
 
 " Delete lines
 nnoremap C cc
+xnoremap C cc
 nnoremap D dd
-vnoremap C cc
-vnoremap D dd
+xnoremap D dd
 
 " Enter visual block mode
 noremap <Bar>v <C-V>
 
 " Indent keeping selection
-vnoremap < <gv
-vnoremap > >gv
-vnoremap = =gv
+xnoremap < <gv
+xnoremap > >gv
+xnoremap = =gv
 
 " Turn capital letters into opposite actions
 " nnoremap U :redo<CR> " Handled by custom version of IdeaVim
@@ -245,23 +245,23 @@ nmap mS :action NewScratchFile<CR>
 
 " Repurpose 'm' for refactoring (normal / visual mode)
 nmap mc :action IntroduceConstant<CR>
-vmap mc :action IntroduceConstant<CR>
+xmap mc :action IntroduceConstant<CR>
 nmap mf :action IntroduceField<CR>
-vmap mf :action IntroduceField<CR>
+xmap mf :action IntroduceField<CR>
 nmap mm :action ExtractMethod<CR>
-vmap mm :action ExtractMethod<CR>
+xmap mm :action ExtractMethod<CR>
 nmap mM :action ExtractFunction<CR>
-vmap mM :action ExtractFunction<CR>
+xmap mM :action ExtractFunction<CR>
 nmap mp :action IntroduceParameter<CR>
-vmap mp :action IntroduceParameter<CR>
+xmap mp :action IntroduceParameter<CR>
 nmap mP :action IntroduceProperty<CR>
-vmap mP :action IntroduceProperty<CR>
+xmap mP :action IntroduceProperty<CR>
 nmap mr :action Refactorings.QuickListPopupAction<CR>
-vmap mr :action Refactorings.QuickListPopupAction<CR>
+xmap mr :action Refactorings.QuickListPopupAction<CR>
 nmap mv :action IntroduceVariable<CR>
-vmap mv :action IntroduceVariable<CR>
+xmap mv :action IntroduceVariable<CR>
 nmap mw :action SurroundWith<CR>
-vmap mw :action SurroundWith<CR>
+xmap mw :action SurroundWith<CR>
 
 " Actions for custom version of AceJump
 set acejump
