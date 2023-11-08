@@ -121,7 +121,7 @@ nnoremap D dd
 xnoremap D dd
 
 " Enter visual block mode
-noremap <Bar>v <C-V>
+xnoremap v <C-V>
 
 " Indent keeping selection
 xnoremap < <gv
