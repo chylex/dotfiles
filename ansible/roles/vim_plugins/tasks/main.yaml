@@ -14,10 +14,16 @@
     - { name: "lightline"             , repo: "https://github.com/itchyny/lightline.vim.git" }
     - { name: "rainbow"               , repo: "https://github.com/luochen1990/rainbow.git" }
     - { name: "repeat"                , repo: "https://github.com/tpope/vim-repeat.git" }
-    - { name: "replace-with-register" , repo: "https://github.com/vim-scripts/ReplaceWithRegister.git" }
     - { name: "sleuth"                , repo: "https://github.com/tpope/vim-sleuth.git" }
     - { name: "surround"              , repo: "https://github.com/tpope/vim-surround.git" }
     - { name: "visual-multi"          , repo: "https://github.com/mg979/vim-visual-multi.git" }
     - { name: "visual-star-search"    , repo: "https://github.com/nelstrom/vim-visual-star-search.git" }
   loop_control:
     label: "{{ item.name }}"
+
+- name: Delete unused vim plugins
+  file:
+    path: "~/.vim/pack/plugins/start/{{ item }}"
+    state: absent
+  loop:
+    - "replace-with-register"

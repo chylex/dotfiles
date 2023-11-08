@@ -106,7 +106,8 @@ nnoremap U :redo<CR>
 nnoremap gp `[v`]
 
 " Put without yank
-xmap p gr
+xnoremap p P
+xnoremap P p
 
 " Plugin: https://github.com/easymotion/vim-easymotion.git
 map <Space> <Plug>(easymotion-prefix)

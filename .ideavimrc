@@ -59,7 +59,6 @@ sethandler <C-W> a:vim
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
 Plug 'nerdtree'
-Plug 'vim-ReplaceWithRegister'
 Plug 'vim-exchange'
 Plug 'vim-highlightedyank'
 Plug 'vim-indent-object'
@@ -137,7 +136,8 @@ vnoremap = =gv
 nnoremap gp `[v`]
 
 " Put without yank
-xmap p gr
+xnoremap p P
+xnoremap P p
 
 " Navigate back/forward
 nmap <BS> <Action>(Back)
