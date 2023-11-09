@@ -102,7 +102,7 @@ noremap <A-l> gt
 inoremap <A-h> <C-o>gT
 inoremap <A-l> <C-o>gt
 
-noremap <C-w> :action CloseContent<CR>
+noremap <C-w> <Action>(CloseContent)
 
 " Increment/decrement numbers
 noremap <Bar>+ <C-a>
@@ -173,7 +173,7 @@ nnoremap Z z
 noremap \\ <C-w>
 
 " Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
-nmap <Enter> :action EditorCompleteStatement<CR>
+nmap <Enter> <Action>(EditorCompleteStatement)
 
 " Repurpose special characters for navigation
 nmap ( :raction GotoPreviousError<CR>
@@ -182,23 +182,23 @@ nmap ) :raction GotoNextError<CR>
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
 nmap gB :raction GotoPreviousBookmark<CR>
-nmap gD :action GotoTypeDeclaration<CR>
+nmap gD <Action>(GotoTypeDeclaration)
 nmap ge :raction VcsShowNextChangeMarker<CR>
 nmap gE :raction VcsShowPrevChangeMarker<CR>
-nmap gf :action EditSource<CR>
-nmap gi :action GotoImplementation<CR>
+nmap gf <Action>(EditSource)
+nmap gi <Action>(GotoImplementation)
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
-nmap gr :action RecentLocations<CR>
-nmap gR :action RecentChangedFiles<CR>
-nmap gs :action GotoSuperMethod<CR>
-nmap gS :action ShowSiblings<CR>
+nmap gr <Action>(RecentLocations)
+nmap gR <Action>(RecentChangedFiles)
+nmap gs <Action>(GotoSuperMethod)
+nmap gS <Action>(ShowSiblings)
 map gt :raction KM.GotoNextTypeInFile<CR>
 map gT :raction KM.GotoPreviousTypeInFile<CR>
-nmap gu :action ShowUsages<CR>
-nmap gU :action FindUsages<CR>
-map gz :action NextSplitter<CR>
-map gZ :action PrevSplitter<CR>
+nmap gu <Action>(ShowUsages)
+nmap gU <Action>(FindUsages)
+map gz <Action>(NextSplitter)
+map gZ <Action>(PrevSplitter)
 nmap g( :raction KM.GotoPreviousErrorInOtherMode<CR>
 nmap g) :raction KM.GotoNextErrorInOtherMode<CR>
 
@@ -215,71 +215,71 @@ map Gz gz
 map GZ gZ
 
 " Repurpose 'z' for view actions, debugger, and tab management
-map za :action Annotate<CR>
-map zb :action ViewBreakpoints<CR>
-map zc :action EditorContextInfo<CR>
-map zd :action QuickJavaDoc<CR>
-map ze :action ShowErrorDescription<CR>
-map zf :action SelectInProjectView<CR>
+map za <Action>(Annotate)
+map zb <Action>(ViewBreakpoints)
+map zc <Action>(EditorContextInfo)
+map zd <Action>(QuickJavaDoc)
+map ze <Action>(ShowErrorDescription)
+map zf <Action>(SelectInProjectView)
 
-map zht :action TypeHierarchy<CR>
-map zhm :action MethodHierarchy<CR>
-map zhc :action CallHierarchy<CR>
+map zht <Action>(TypeHierarchy)
+map zhm <Action>(MethodHierarchy)
+map zhc <Action>(CallHierarchy)
 
-map zm :action ShowBookmarks<CR>
-map zp :action QuickImplementations<CR>
-map zP :action QuickTypeDefinition<CR>
+map zm <Action>(ShowBookmarks)
+map zp <Action>(QuickImplementations)
+map zP <Action>(QuickTypeDefinition)
 
-map zqa :action CloseAllEditors<CR>
-map zqh :action CloseAllToTheLeft<CR>
-map zql :action CloseAllToTheRight<CR>
-map zqo :action CloseAllEditorsButActive<CR>
-map zqq :action CloseContent<CR>
-map zqu :action ReopenClosedTab<CR>
+map zqa <Action>(CloseAllEditors)
+map zqh <Action>(CloseAllToTheLeft)
+map zql <Action>(CloseAllToTheRight)
+map zqo <Action>(CloseAllEditorsButActive)
+map zqq <Action>(CloseContent)
+map zqu <Action>(ReopenClosedTab)
 
-map zr :action RunToCursor<CR>
-map zR :action ForceRunToCursor<CR>
+map zr <Action>(RunToCursor)
+map zR <Action>(ForceRunToCursor)
 
-map zsd :action MoveTabDown<CR>
-map zsr :action MoveTabRight<CR>
-map zsu :action Unsplit<CR>
-map zsU :action UnsplitAll<CR>
+map zsd <Action>(MoveTabDown)
+map zsr <Action>(MoveTabRight)
+map zsu <Action>(Unsplit)
+map zsU <Action>(UnsplitAll)
 
-map zt :action ExpressionTypeInfo<CR>
-map zx :action EvaluateExpression<CR>
+map zt <Action>(ExpressionTypeInfo)
+map zx <Action>(EvaluateExpression)
 
 " Repurpose 'm' for refactoring (normal mode)
-nmap md :action SafeDelete<CR>
-nmap me :action Move<CR>
-nmap mg :action Generate<CR>
-nmap mi :action Inline<CR>
-nmap mn :action RenameElement<CR>
-nmap mo :action OverrideMethods<CR>
-nmap ms :action ChangeSignature<CR>
-nmap mS :action NewScratchFile<CR>
+nmap md <Action>(SafeDelete)
+nmap me <Action>(Move)
+nmap mg <Action>(Generate)
+nmap mi <Action>(Inline)
+nmap mn <Action>(RenameElement)
+nmap mo <Action>(OverrideMethods)
+nmap ms <Action>(ChangeSignature)
+nmap mS <Action>(NewScratchFile)
 
 " Repurpose 'm' for refactoring (normal / visual mode)
-nmap mc :action IntroduceConstant<CR>
-xmap mc :action IntroduceConstant<CR>
-nmap mf :action IntroduceField<CR>
-xmap mf :action IntroduceField<CR>
-nmap mm :action ExtractMethod<CR>
-xmap mm :action ExtractMethod<CR>
-nmap mM :action ExtractFunction<CR>
-xmap mM :action ExtractFunction<CR>
-nmap mp :action IntroduceParameter<CR>
-xmap mp :action IntroduceParameter<CR>
-nmap mP :action IntroduceProperty<CR>
-xmap mP :action IntroduceProperty<CR>
-nmap mr :action Refactorings.QuickListPopupAction<CR>
-xmap mr :action Refactorings.QuickListPopupAction<CR>
-nmap mt :action InsertLiveTemplate<CR>
-xmap mt :action SurroundWithLiveTemplate<CR>
-nmap mv :action IntroduceVariable<CR>
-xmap mv :action IntroduceVariable<CR>
-nmap mw :action SurroundWith<CR>
-xmap mw :action SurroundWith<CR>
+nmap mc <Action>(IntroduceConstant)
+xmap mc <Action>(IntroduceConstant)
+nmap mf <Action>(IntroduceField)
+xmap mf <Action>(IntroduceField)
+nmap mm <Action>(ExtractMethod)
+xmap mm <Action>(ExtractMethod)
+nmap mM <Action>(ExtractFunction)
+xmap mM <Action>(ExtractFunction)
+nmap mp <Action>(IntroduceParameter)
+xmap mp <Action>(IntroduceParameter)
+nmap mP <Action>(IntroduceProperty)
+xmap mP <Action>(IntroduceProperty)
+nmap mr <Action>(Refactorings.QuickListPopupAction)
+xmap mr <Action>(Refactorings.QuickListPopupAction)
+nmap mt <Action>(InsertLiveTemplate)
+xmap mt <Action>(SurroundWithLiveTemplate)
+nmap mv <Action>(IntroduceVariable)
+xmap mv <Action>(IntroduceVariable)
+nmap mw <Action>(SurroundWith)
+xmap mw <Action>(SurroundWith)
 
 " Actions for custom version of AceJump
 set acejump
-map <Space> :action AceVimAction_JumpAllEditors<CR>
+map <Space> <Action>(AceVimAction_JumpAllEditors)
