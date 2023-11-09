@@ -105,8 +105,8 @@ inoremap <A-l> <C-o>gt
 noremap <C-w> :action CloseContent<CR>
 
 " Increment/decrement numbers
-nnoremap <Bar>+ <C-a>
-nnoremap <Bar>- <C-x>
+noremap <Bar>+ <C-a>
+noremap <Bar>- <C-x>
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
