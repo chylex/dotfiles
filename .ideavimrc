@@ -138,15 +138,27 @@ nnoremap gp `[v`]
 xnoremap p P
 xnoremap P p
 
-" Navigate back/forward
-nmap <BS> <Action>(Back)
-nmap <S-BS> <Action>(Forward)
-
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
 imap <A-p> <Action>(ParameterInfo)
 
-" Rebind commands that will be repurposed
+" Navigate back/forward
+nmap <BS> <Action>(Back)
+nmap <S-BS> <Action>(Forward)
+
+" Navigate to previous/next method
+nnoremap [ [m
+xnoremap [ [m
+nnoremap ] ]m
+xnoremap ] ]m
+
+" Alternative bindings for square bracket commands
+nnoremap g[ [
+xnoremap g[ [
+nnoremap g] ]
+xnoremap g] ]
+
+" Rebind repurposed commands
 nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
@@ -160,8 +172,6 @@ nmap <Enter> :action EditorCompleteStatement<CR>
 " Repurpose special characters for navigation
 nmap ( :raction GotoPreviousError<CR>
 nmap ) :raction GotoNextError<CR>
-nmap [ :raction MethodUp<CR>
-nmap ] :raction MethodDown<CR>
 nmap { :raction JumpToLastChange<CR>
 nmap } :raction JumpToNextChange<CR>
 
