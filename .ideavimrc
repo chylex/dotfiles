@@ -55,6 +55,7 @@ sethandler <C-O> a:vim
 sethandler <C-P> a:vim
 sethandler <C-U> a:vim
 sethandler <C-W> a:vim
+sethandler <C-S-W> a:vim
 
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
@@ -96,13 +97,11 @@ xnoremap H ]b
 noremap <A-b> ge
 noremap <A-S-b> gE
 
-" Navigate and close tabs
+" Navigate editor tabs
 noremap <A-h> gT
 noremap <A-l> gt
 inoremap <A-h> <C-o>gT
 inoremap <A-l> <C-o>gt
-
-noremap <C-w> <Action>(CloseContent)
 
 " Increment/decrement numbers
 noremap <Bar>+ <C-a>
@@ -164,13 +163,29 @@ xnoremap g[ [
 nnoremap g] ]
 xnoremap g] ]
 
+" Manage editor tabs
+noremap <C-w> :action CloseContent<CR>
+noremap <C-S-w> :action ReopenClosedTab<CR>
+noremap \\ <C-w>
+
+noremap \\s :action MoveTabDown<CR>
+noremap \\S <C-w>s
+noremap \\u :action Unsplit<CR>
+noremap \\U :action UnsplitAll<CR>
+noremap \\v :action MoveTabRight<CR>
+noremap \\V <C-w>v
+
+noremap \\qa :action CloseAllEditors<CR>
+noremap \\qh :action CloseAllToTheLeft<CR>
+noremap \\ql :action CloseAllToTheRight<CR>
+noremap \\qo :action CloseAllEditorsButActive<CR>
+
 " Rebind repurposed commands
 nnoremap GG G
 nnoremap dG dG
 nnoremap cG cG
 nnoremap M m
 nnoremap Z z
-noremap \\ <C-w>
 
 " Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
@@ -214,7 +229,7 @@ nmap GT gT
 map Gz gz
 map GZ gZ
 
-" Repurpose 'z' for view actions, debugger, and tab management
+" Repurpose 'z' for view actions and debugger
 map za <Action>(Annotate)
 map zb <Action>(ViewBreakpoints)
 map zc <Action>(EditorContextInfo)
@@ -230,20 +245,8 @@ map zm <Action>(ShowBookmarks)
 map zp <Action>(QuickImplementations)
 map zP <Action>(QuickTypeDefinition)
 
-map zqa <Action>(CloseAllEditors)
-map zqh <Action>(CloseAllToTheLeft)
-map zql <Action>(CloseAllToTheRight)
-map zqo <Action>(CloseAllEditorsButActive)
-map zqq <Action>(CloseContent)
-map zqu <Action>(ReopenClosedTab)
-
 map zr <Action>(RunToCursor)
 map zR <Action>(ForceRunToCursor)
-
-map zsd <Action>(MoveTabDown)
-map zsr <Action>(MoveTabRight)
-map zsu <Action>(Unsplit)
-map zsU <Action>(UnsplitAll)
 
 map zt <Action>(ExpressionTypeInfo)
 map zx <Action>(EvaluateExpression)
