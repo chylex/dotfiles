@@ -182,10 +182,10 @@ nmap ) :raction GotoNextError<CR>
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
 nmap gB :raction GotoPreviousBookmark<CR>
-nmap gd :action GotoDeclaration<CR>
 nmap gD :action GotoTypeDeclaration<CR>
 nmap ge :raction VcsShowNextChangeMarker<CR>
 nmap gE :raction VcsShowPrevChangeMarker<CR>
+nmap gf :action EditSource<CR>
 nmap gi :action GotoImplementation<CR>
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
@@ -250,6 +250,7 @@ map zx :action EvaluateExpression<CR>
 
 " Repurpose 'm' for refactoring (normal mode)
 nmap md :action SafeDelete<CR>
+nmap me :action Move<CR>
 nmap mg :action Generate<CR>
 nmap mi :action Inline<CR>
 nmap mn :action RenameElement<CR>
@@ -272,6 +273,8 @@ nmap mP :action IntroduceProperty<CR>
 xmap mP :action IntroduceProperty<CR>
 nmap mr :action Refactorings.QuickListPopupAction<CR>
 xmap mr :action Refactorings.QuickListPopupAction<CR>
+nmap mt :action InsertLiveTemplate<CR>
+xmap mt :action SurroundWithLiveTemplate<CR>
 nmap mv :action IntroduceVariable<CR>
 xmap mv :action IntroduceVariable<CR>
 nmap mw :action SurroundWith<CR>
