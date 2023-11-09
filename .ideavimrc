@@ -142,6 +142,12 @@ xnoremap P p
 nmap <A-p> <Action>(ParameterInfo)
 imap <A-p> <Action>(ParameterInfo)
 
+" Toggle comments
+nmap <C--> <Action>(CommentByLineComment)
+vmap <C--> <Action>(CommentByBlockComment)
+nmap <D--> <C-->
+vmap <D--> <C-->
+
 " Navigate back/forward
 nmap <BS> <Action>(Back)
 nmap <S-BS> <Action>(Forward)
