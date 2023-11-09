@@ -172,8 +172,6 @@ nmap <Enter> :action EditorCompleteStatement<CR>
 " Repurpose special characters for navigation
 nmap ( :raction GotoPreviousError<CR>
 nmap ) :raction GotoNextError<CR>
-nmap { :raction JumpToLastChange<CR>
-nmap } :raction JumpToNextChange<CR>
 
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
