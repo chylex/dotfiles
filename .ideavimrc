@@ -241,6 +241,11 @@ map zht <Action>(TypeHierarchy)
 map zhm <Action>(MethodHierarchy)
 map zhc <Action>(CallHierarchy)
 
+nmap zhl <Action>(LocalHistory.ShowHistory)
+xmap zhl <Action>(LocalHistory.ShowSelectionHistory)
+nmap zhg <Action>(Vcs.ShowTabbedFileHistory)
+xmap zhg <Action>(Vcs.ShowHistoryForBlock)
+
 map zm <Action>(ShowBookmarks)
 map zp <Action>(QuickImplementations)
 map zP <Action>(QuickTypeDefinition)
