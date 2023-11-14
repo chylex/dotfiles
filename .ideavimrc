@@ -65,6 +65,7 @@ Plug 'vim-highlightedyank'
 Plug 'vim-indent-object'
 Plug 'vim-matchit'
 Plug 'vim-multiple-cursors'
+Plug 'vim-paragraph-motion'
 Plug 'vim-surround'
 Plug 'vim-textobj-entire'
 
@@ -96,6 +97,14 @@ xnoremap H ]b
 " Navigate to end of previous word
 noremap <A-b> ge
 noremap <A-S-b> gE
+
+" Navigate paragraphs at indentation level
+map { <Plug>(ParagraphPrevMotion)$
+map } <Plug>(ParagraphNextMotion)$
+
+" Navigate inspection highlights
+nmap ( :raction GotoPreviousError<CR>
+nmap ) :raction GotoNextError<CR>
 
 " Navigate editor tabs
 noremap <A-h> gT
@@ -183,10 +192,6 @@ nnoremap Z z
 
 " Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
-
-" Repurpose special characters for navigation
-nmap ( :raction GotoPreviousError<CR>
-nmap ) :raction GotoNextError<CR>
 
 " Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
 nmap gb :raction GotoNextBookmark<CR>
