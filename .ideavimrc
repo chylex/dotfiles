@@ -56,6 +56,7 @@ sethandler <C-P> a:vim
 sethandler <C-U> a:vim
 sethandler <C-W> a:vim
 sethandler <C-S-W> a:vim
+sethandler <S-BS> a:vim
 
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
