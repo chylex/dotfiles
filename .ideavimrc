@@ -98,14 +98,6 @@ xnoremap H ]b
 noremap <A-b> ge
 noremap <A-S-b> gE
 
-" Navigate paragraphs at indentation level
-map { <Plug>(ParagraphPrevMotion)$
-map } <Plug>(ParagraphNextMotion)$
-
-" Navigate inspection highlights
-nmap ( :raction GotoPreviousError<CR>
-nmap ) :raction GotoNextError<CR>
-
 " Navigate editor tabs
 noremap <A-h> gT
 noremap <A-l> gt
@@ -154,17 +146,17 @@ imap <A-p> <Action>(ParameterInfo)
 nmap <BS> <Action>(Back)
 nmap <S-BS> <Action>(Forward)
 
-" Navigate to previous/next method
-nnoremap [ [m
-xnoremap [ [m
-nnoremap ] ]m
-xnoremap ] ]m
+" Navigate inspection highlights
+nmap ( :raction GotoPreviousError<CR>
+nmap ) :raction GotoNextError<CR>
 
-" Alternative bindings for square bracket commands
-nnoremap g[ [
-xnoremap g[ [
-nnoremap g] ]
-xnoremap g] ]
+" Navigate to previous/next method
+nmap [[ :raction MethodUp<CR>
+nmap ]] :raction MethodDown<CR>
+
+" Navigate paragraphs at indentation
+map { <Plug>(ParagraphPrevMotion)$
+map } <Plug>(ParagraphNextMotion)$
 
 " Manage editor tabs
 noremap <C-w> :action CloseContent<CR>
