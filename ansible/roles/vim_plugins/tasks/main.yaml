@@ -12,6 +12,7 @@
     - { name: "highlighted-yank"      , repo: "https://github.com/machakann/vim-highlightedyank.git" }
     - { name: "indent-object"         , repo: "https://github.com/michaeljsmith/vim-indent-object.git" }
     - { name: "lightline"             , repo: "https://github.com/itchyny/lightline.vim.git" }
+    - { name: "paragraph-motion"      , repo: "https://github.com/dbakker/vim-paragraph-motion.git" }
     - { name: "rainbow"               , repo: "https://github.com/luochen1990/rainbow.git" }
     - { name: "repeat"                , repo: "https://github.com/tpope/vim-repeat.git" }
     - { name: "sleuth"                , repo: "https://github.com/tpope/vim-sleuth.git" }
