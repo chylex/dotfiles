@@ -160,10 +160,12 @@ map { <Plug>(ParagraphPrevMotion)$
 map } <Plug>(ParagraphNextMotion)$
 
 " Manage editor tabs
-noremap <C-w> :action CloseContent<CR>
-noremap <C-S-w> :action ReopenClosedTab<CR>
+map <C-w> <Action>(CloseContent)
+map <C-S-w> <Action>(ReopenClosedTab)
+
 noremap \\ <C-w>
 
+noremap \\m :action MoveEditorToOppositeTabGroup<CR>
 noremap \\s :action MoveTabDown<CR>
 noremap \\S <C-w>s
 noremap \\u :action Unsplit<CR>
@@ -171,10 +173,10 @@ noremap \\U :action UnsplitAll<CR>
 noremap \\v :action MoveTabRight<CR>
 noremap \\V <C-w>v
 
-noremap \\qa :action CloseAllEditors<CR>
-noremap \\qh :action CloseAllToTheLeft<CR>
-noremap \\ql :action CloseAllToTheRight<CR>
-noremap \\qo :action CloseAllEditorsButActive<CR>
+noremap \\\\a :action CloseAllEditors<CR>
+noremap \\\\h :action CloseAllToTheLeft<CR>
+noremap \\\\l :action CloseAllToTheRight<CR>
+noremap \\\\o :action CloseAllEditorsButActive<CR>
 
 " Rebind repurposed commands
 nnoremap GG G
@@ -204,8 +206,6 @@ map gt :raction KM.GotoNextTypeInFile<CR>
 map gT :raction KM.GotoPreviousTypeInFile<CR>
 nmap gu <Action>(ShowUsages)
 nmap gU <Action>(FindUsages)
-map gz <Action>(NextSplitter)
-map gZ <Action>(PrevSplitter)
 nmap g( :raction KM.GotoPreviousErrorInOtherMode<CR>
 nmap g) :raction KM.GotoNextErrorInOtherMode<CR>
 
