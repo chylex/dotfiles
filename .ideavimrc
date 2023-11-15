@@ -32,7 +32,6 @@ sethandler <C-G> a:ide
 sethandler <C-I> a:ide
 sethandler <C-J> a:ide
 sethandler <C-K> a:ide
-sethandler <C-L> a:ide
 sethandler <C-M> a:ide
 sethandler <C-R> a:ide
 sethandler <C-S> a:ide
@@ -49,7 +48,9 @@ sethandler <A-P> a:vim
 sethandler <A-S-B> a:vim
 sethandler <A-X> a:vim
 sethandler <C-D> a:vim
+sethandler <C-H> a:vim
 sethandler <C-I> a:vim
+sethandler <C-L> a:vim
 sethandler <C-N> a:vim
 sethandler <C-O> a:vim
 sethandler <C-P> a:vim
@@ -100,10 +101,10 @@ noremap <A-b> ge
 noremap <A-S-b> gE
 
 " Navigate editor tabs
-noremap <A-h> gT
-noremap <A-l> gt
-inoremap <A-h> <C-o>gT
-inoremap <A-l> <C-o>gt
+noremap <C-h> gT
+noremap <C-l> gt
+inoremap <C-h> <C-o>gT
+inoremap <C-l> <C-o>gt
 
 " Increment/decrement numbers
 noremap <Bar>+ <C-a>
