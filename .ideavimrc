@@ -194,7 +194,7 @@ nmap gB :raction GotoPreviousBookmark<CR>
 nmap gD <Action>(GotoTypeDeclaration)
 nmap ge :raction VcsShowNextChangeMarker<CR>
 nmap gE :raction VcsShowPrevChangeMarker<CR>
-nmap gf <Action>(EditSource)
+nmap gf <Action>(VimJumpToSource)<Action>(HideActiveWindow) " VimJumpToSource requires a custom version of IdeaVIM
 nmap gi <Action>(GotoImplementation)
 map gj :raction EditorCloneCaretBelow<CR>
 map gk :raction EditorCloneCaretAbove<CR>
