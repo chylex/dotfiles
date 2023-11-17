@@ -149,12 +149,12 @@ nmap <BS> <Action>(Back)
 nmap <S-BS> <Action>(Forward)
 
 " Navigate inspection highlights
-nmap ( :raction GotoPreviousError<CR>
-nmap ) :raction GotoNextError<CR>
+nmap ( <Action>(GotoPreviousError)
+nmap ) <Action>(GotoNextError)
 
 " Navigate to previous/next method
-nmap [[ :raction MethodUp<CR>
-nmap ]] :raction MethodDown<CR>
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
 
 " Navigate paragraphs at indentation
 map { <Plug>(ParagraphPrevMotion)$
@@ -189,26 +189,26 @@ nnoremap Z z
 " Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
 
-" Repurpose 'g' for navigation (:raction requires a custom version of IdeaVIM)
-nmap gb :raction GotoNextBookmark<CR>
-nmap gB :raction GotoPreviousBookmark<CR>
+" Repurpose 'g' for navigation
+nmap gb <Action>(GotoNextBookmark)
+nmap gB <Action>(GotoPreviousBookmark)
 nmap gD <Action>(GotoTypeDeclaration)
-nmap ge :raction VcsShowNextChangeMarker<CR>
-nmap gE :raction VcsShowPrevChangeMarker<CR>
+nmap ge <Action>(VcsShowNextChangeMarker)
+nmap gE <Action>(VcsShowPrevChangeMarker)
 nmap gf <Action>(VimJumpToSource)<Action>(HideActiveWindow) " VimJumpToSource requires a custom version of IdeaVIM
 nmap gi <Action>(GotoImplementation)
-map gj :raction EditorCloneCaretBelow<CR>
-map gk :raction EditorCloneCaretAbove<CR>
+map gj <Action>(EditorCloneCaretBelow)
+map gk <Action>(EditorCloneCaretAbove)
 nmap gr <Action>(RecentLocations)
 nmap gR <Action>(RecentChangedFiles)
 nmap gs <Action>(GotoSuperMethod)
 nmap gS <Action>(ShowSiblings)
-map gt :raction KM.GotoNextTypeInFile<CR>
-map gT :raction KM.GotoPreviousTypeInFile<CR>
+map gt <Action>(KM.GotoNextTypeInFile)
+map gT <Action>(KM.GotoPreviousTypeInFile)
 nmap gu <Action>(ShowUsages)
 nmap gU <Action>(FindUsages)
-nmap g( :raction KM.GotoPreviousErrorInOtherMode<CR>
-nmap g) :raction KM.GotoNextErrorInOtherMode<CR>
+nmap g( <Action>(KM.GotoPreviousErrorInOtherMode)
+nmap g) <Action>(KM.GotoNextErrorInOtherMode)
 
 " Make bidirectional 'g' commands work with 'G' too
 nmap Gb gb
