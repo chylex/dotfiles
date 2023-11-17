@@ -284,3 +284,4 @@ xmap mw <Action>(SurroundWith)
 " Actions for custom version of AceJump
 set acejump
 map <Space> <Action>(AceVimAction_JumpAllEditors)
+map g<Space> <Action>(AceVimAction_JumpAllEditors_GoToDeclaration)
