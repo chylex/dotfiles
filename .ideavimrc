@@ -37,6 +37,7 @@ sethandler <C-R> a:ide
 sethandler <C-S> a:ide
 sethandler <C-T> a:ide
 sethandler <C-V> a:ide
+sethandler <C-W> a:ide
 sethandler <C-X> a:ide
 sethandler <C-Y> a:ide
 sethandler <C-\> a:ide
@@ -55,7 +56,6 @@ sethandler <C-N> a:vim
 sethandler <C-O> a:vim
 sethandler <C-P> a:vim
 sethandler <C-U> a:vim
-sethandler <C-W> a:vim
 sethandler <C-S-W> a:vim
 sethandler <S-BS> a:vim
 
@@ -161,23 +161,22 @@ map { <Plug>(ParagraphPrevMotion)$
 map } <Plug>(ParagraphNextMotion)$
 
 " Manage editor tabs
-map <C-w> <Action>(CloseContent)
-map <C-S-w> <Action>(ReopenClosedTab)
+map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
+map <C-w>s <Action>(MoveTabDown)
+map <C-w>u <Action>(Unsplit)
+map <C-w>U <Action>(UnsplitAll)
+map <C-w>v <Action>(MoveTabRight)
 
-noremap \\ <C-w>
+noremap <C-w>S <C-w>s
+noremap <C-w>V <C-w>v
 
-noremap \\m :action MoveEditorToOppositeTabGroup<CR>
-noremap \\s :action MoveTabDown<CR>
-noremap \\S <C-w>s
-noremap \\u :action Unsplit<CR>
-noremap \\U :action UnsplitAll<CR>
-noremap \\v :action MoveTabRight<CR>
-noremap \\V <C-w>v
+map <C-w><C-w>a <Action>(CloseAllEditors)
+map <C-w><C-w>h <Action>(CloseAllToTheLeft)
+map <C-w><C-w>l <Action>(CloseAllToTheRight)
+map <C-w><C-w>o <Action>(CloseAllEditorsButActive)
 
-noremap \\\\a :action CloseAllEditors<CR>
-noremap \\\\h :action CloseAllToTheLeft<CR>
-noremap \\\\l :action CloseAllToTheRight<CR>
-noremap \\\\o :action CloseAllEditorsButActive<CR>
+map \\ <C-w>
+map \\\\ <C-w><C-w>
 
 " Rebind repurposed commands
 nnoremap GG G
