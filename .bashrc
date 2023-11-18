@@ -7,6 +7,7 @@ bind '"\e[B": history-search-forward'
 alias gh='history|grep'
 alias less='less --mouse'
 alias lsa='ls -l -v --all --human-readable --group-directories-first --color=auto'
+alias vim='vim -p'
 
 alias d='docker'
 alias dc='docker compose'
