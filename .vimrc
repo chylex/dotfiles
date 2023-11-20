@@ -8,9 +8,10 @@ set infercase
 set laststatus=2
 set linebreak
 set listchars=space:·,tab:>·,trail:~,extends:>,precedes:<
+set modeline
+set modelines=2
 set mouse=a
 set noerrorbells
-set nomodeline
 set noshowcmd
 set noshowmode
 set number
