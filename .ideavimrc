@@ -126,7 +126,7 @@ xnoremap > >gv
 xnoremap = =gv
 
 " Turn capital letters into opposite actions
-" nnoremap U :redo<CR> " Handled by custom version of IdeaVim
+" nnoremap U :redo<CR> " Handled by custom version of IdeaVIM
 
 " Reselect pasted text
 nnoremap gp `[v`]
@@ -183,13 +183,13 @@ nnoremap Z z
 " Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
 
-" Repurpose 'g' for navigation
+" Repurpose 'g' for navigation (VimJumpToSource requires a custom version of IdeaVIM)
 nmap gb <Action>(GotoNextBookmark)
 nmap gB <Action>(GotoPreviousBookmark)
 nmap gD <Action>(GotoTypeDeclaration)
 nmap ge <Action>(VcsShowNextChangeMarker)
 nmap gE <Action>(VcsShowPrevChangeMarker)
-nmap gf <Action>(VimJumpToSource)<Action>(HideActiveWindow) " VimJumpToSource requires a custom version of IdeaVIM
+nmap gf <Action>(VimJumpToSource)<Action>(HideActiveWindow)
 nmap gi <Action>(GotoImplementation)
 map gj <Action>(EditorCloneCaretBelow)
 map gk <Action>(EditorCloneCaretAbove)
