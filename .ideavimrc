@@ -50,6 +50,7 @@ sethandler <A-L> a:vim
 sethandler <A-N> a:vim
 sethandler <A-P> a:vim
 sethandler <A-S-B> a:vim
+sethandler <A-V> a:vim
 sethandler <A-X> a:vim
 sethandler <C-D> a:vim
 sethandler <C-I> a:vim
@@ -118,7 +119,7 @@ nnoremap D dd
 xnoremap D dd
 
 " Enter visual block mode
-xnoremap v <C-V>
+map <A-v> <C-V>
 
 " Indent keeping selection
 xnoremap < <gv
