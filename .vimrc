@@ -24,6 +24,8 @@ set showmatch
 set sidescrolloff=999
 set smartcase
 set tabstop=4
+set ttimeout
+set ttimeoutlen=50
 set ttymouse=xterm2
 set wildmenu
 set wrap
@@ -41,6 +43,17 @@ highlight LineNr    ctermfg=244
 highlight IncSearch ctermfg=251 ctermbg=238
 highlight Search    ctermfg=251 ctermbg=238
 highlight Visual    ctermfg=240 ctermbg=250
+
+" Fix Alt mappings (https://github.com/vim/vim/issues/2588#issuecomment-697959290)
+for ord in range(65, 90) + range(97, 122)
+  let char = nr2char(ord)
+  exec printf("set <m-%s>=\<esc>%s", char, char)
+  exec printf("tnoremap <silent> <m-%s> <esc>%s", char, char)
+endfor
+
+" Navigate editor tabs
+noremap <M-h> gT
+noremap <M-l> gt
 
 " Map top row on Czech keyboard layout to digits
 map + 1
@@ -72,8 +85,8 @@ omap iH <Plug>CamelCaseMotion_ib
 xmap iH <Plug>CamelCaseMotion_ib
 
 " Navigate to end of previous word
-noremap <A-b> ge
-noremap <A-S-b> gE
+noremap <M-b> ge
+noremap <M-S-b> gE
 
 " Navigate soft-wrapped lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
@@ -94,7 +107,7 @@ nnoremap D dd
 xnoremap D dd
 
 " Enter visual block mode
-xnoremap v <C-V>
+map <M-v> <C-v>
 
 " Indent keeping selection
 xnoremap < <gv
