@@ -69,9 +69,10 @@ map é 0
 
 " Move some commands closer on Czech keyboard layout
 nnoremap ú @@
-noremap ů ;
-map § %
-sunmap §
+noremap § ;
+map ů %
+map gů g%
+sunmap ů
 
 " Camel humps (https://github.com/vim-scripts/camelcasemotion)
 map L <Plug>CamelCaseMotion_w

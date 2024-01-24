@@ -89,8 +89,9 @@ map é 0
 
 " Move some commands closer on Czech keyboard layout
 nnoremap ú @@
-noremap ů ;
-map § %
+noremap § ;
+map ů %
+map gů g%
 
 " Camel humps
 noremap L [w
@@ -181,7 +182,7 @@ nnoremap cG cG
 nnoremap M m
 nnoremap Z z
 
-" Repurpose 'Enter' for statement completion (requires a custom version of IdeaVIM)
+" Repurpose 'Enter' for statement completion
 nmap <Enter> <Action>(EditorCompleteStatement)
 
 " Repurpose 'g' for navigation (VimJumpToSource requires a custom version of IdeaVIM)
