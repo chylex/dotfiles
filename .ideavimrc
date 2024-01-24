@@ -176,9 +176,6 @@ map \\ <C-w>
 map \\\\ <C-w><C-w>
 
 " Rebind repurposed commands
-nnoremap GG G
-nnoremap dG dG
-nnoremap cG cG
 nnoremap M m
 nnoremap Z z
 
@@ -205,18 +202,6 @@ nmap gu <Action>(ShowUsages)
 nmap gU <Action>(FindUsages)
 nmap g( <Action>(KM.GotoPreviousErrorInOtherMode)
 nmap g) <Action>(KM.GotoNextErrorInOtherMode)
-
-" Make bidirectional 'g' commands work with 'G' too
-nmap Gb gb
-nmap GB gB
-nmap Ge ge
-nmap GE gE
-map Gj gj
-map Gk gk
-nmap Gt gt
-nmap GT gT
-map Gz gz
-map GZ gZ
 
 " Repurpose 'z' for view actions and debugger
 map za <Action>(Annotate)
