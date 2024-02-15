@@ -263,6 +263,12 @@ xmap mv <Action>(IntroduceVariable)
 nmap mw <Action>(SurroundWith)
 xmap mw <Action>(SurroundWith)
 
+" Remap NERDTree bindings
+let g:NERDTreeMapOpenVSplit = 'v'
+let g:NERDTreeMapPreviewVSplit = 'gv'
+let g:NERDTreeMapOpenSplit = 's'
+let g:NERDTreeMapPreviewSplit = 'gs'
+
 " Actions for custom version of AceJump
 set acejump
 map <Space> <Action>(AceVimAction_JumpAllEditors)
