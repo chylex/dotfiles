@@ -211,7 +211,7 @@ nmap g) <Action>(KM.GotoNextErrorInOtherMode)
 map za <Action>(Annotate)
 map zb <Action>(ViewBreakpoints)
 map zc <Action>(EditorContextInfo)
-map zd <Action>(QuickJavaDoc)
+map zd <Action>(ShowHoverInfo)
 map ze <Action>(ShowErrorDescription)
 map zf <Action>(SelectInProjectView)
 
