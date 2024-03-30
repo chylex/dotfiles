@@ -217,7 +217,12 @@ map zf <Action>(SelectInProjectView)
 
 map zht <Action>(TypeHierarchy)
 map zhm <Action>(MethodHierarchy)
-map zhc <Action>(CallHierarchy)
+
+if &ide =~? 'rider'
+  map zhc <Action>(RiderShowIncomingCalls)
+else
+  map zhc <Action>(CallHierarchy)
+endif
 
 nmap zhl <Action>(LocalHistory.ShowHistory)
 xmap zhl <Action>(LocalHistory.ShowSelectionHistory)
