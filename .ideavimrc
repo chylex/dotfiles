@@ -63,7 +63,6 @@ sethandler <S-BS> a:vim
 
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
-Plug 'nerdtree'
 Plug 'vim-exchange'
 Plug 'vim-highlightedyank'
 Plug 'vim-indent-object'
