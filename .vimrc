@@ -128,6 +128,41 @@ xnoremap P p
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
 
+" Update search register when using f/t
+function FindChar(action, reverse)
+  let t:reversesearch = a:reverse
+  let c = nr2char(getchar())
+  call setreg('/', c)
+  nohlsearch
+  execute 'normal! '.a:action.c
+endfunction
+
+function FindCharVisual(action, reverse)
+  normal gv
+  call FindChar(a:action, a:reverse)
+endfunction
+
+function! ResetReverseSearchFlag()
+  if getcmdtype() =~ "[/?]"
+    let t:reversesearch = 0
+  endif
+endfunction
+
+nmap f :call FindChar('f', 0)<CR>
+nmap F :call FindChar('F', 1)<CR>
+nmap t :call FindChar('t', 0)<CR>
+nmap T :call FindChar('T', 1)<CR>
+
+xmap f :call FindCharVisual('f', 0)<CR>
+xmap F :call FindCharVisual('F', 1)<CR>
+xmap t :call FindCharVisual('t', 0)<CR>
+xmap T :call FindCharVisual('T', 1)<CR>
+
+noremap <expr> n 'nN'[t:reversesearch]
+noremap <expr> N 'Nn'[t:reversesearch]
+
+cnoremap <CR> <cmd>call ResetReverseSearchFlag()<CR><CR>
+
 " Plugin: https://github.com/easymotion/vim-easymotion.git
 nmap <Space> <Plug>(easymotion-overwin-f)
 xmap <Space> <Plug>(easymotion-s)
