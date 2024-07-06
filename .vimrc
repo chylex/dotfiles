@@ -125,6 +125,9 @@ nnoremap gp `[v`]
 xnoremap p P
 xnoremap P p
 
+" Clear search highlights
+nnoremap <Esc> :nohlsearch<Return><Esc>
+
 " Plugin: https://github.com/easymotion/vim-easymotion.git
 nmap <Space> <Plug>(easymotion-overwin-f)
 xmap <Space> <Plug>(easymotion-s)
@@ -135,4 +138,3 @@ let g:highlightedyank_highlight_duration = 500
 
 " Plugin: https://github.com/luochen1990/rainbow
 let g:rainbow_active = 1
-
