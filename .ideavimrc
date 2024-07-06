@@ -136,10 +136,6 @@ nnoremap gp `[v`]
 xnoremap p P
 xnoremap P p
 
-" Extend/shrink selection
-xmap + <Action>(EditorSelectWord)
-xmap - <Action>(EditorUnSelectWord)
-
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
 imap <A-p> <Action>(ParameterInfo)
