@@ -99,7 +99,7 @@ xnoremap <expr> k v:count ? 'k' : 'gk'
 nnoremap c) c])
 nnoremap d) d])
 nnoremap c( c[((
-nnoremap d( c[((<ESC>l
+nnoremap d( c[((<Esc>l
 
 " Delete lines
 nnoremap C cc
