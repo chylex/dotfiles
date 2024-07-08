@@ -129,37 +129,43 @@ xnoremap P p
 nnoremap <Esc> :nohlsearch<Return><Esc>
 
 " Update search register when using f/t
-function FindChar(action, reverse)
-  let t:reversesearch = a:reverse
+function FindChar(action, reverse, search_affix)
+  let t:reverse_search = a:reverse
   let c = nr2char(getchar())
-  call setreg('/', c)
+  
+  if a:reverse
+    call setreg('/', c.a:search_affix)
+  else
+    call setreg('/', a:search_affix.c)
+  endif
+  
   nohlsearch
   execute 'normal! '.a:action.c
 endfunction
 
-function FindCharVisual(action, reverse)
+function FindCharVisual(action, reverse, search_affix)
   normal gv
-  call FindChar(a:action, a:reverse)
+  call FindChar(a:action, a:reverse, a:search_affix)
 endfunction
 
 function! ResetReverseSearchFlag()
   if getcmdtype() =~ "[/?]"
-    let t:reversesearch = 0
+    let t:reverse_search = 0
   endif
 endfunction
 
-nmap f :call FindChar('f', 0)<CR>
-nmap F :call FindChar('F', 1)<CR>
-nmap t :call FindChar('t', 0)<CR>
-nmap T :call FindChar('T', 1)<CR>
+nmap f :call FindChar('f', 0, '')<CR>
+nmap F :call FindChar('F', 1, '')<CR>
+nmap t :call FindChar('t', 0, '\zs.\ze')<CR>
+nmap T :call FindChar('T', 1, '\zs.\ze')<CR>
 
-xmap f :call FindCharVisual('f', 0)<CR>
-xmap F :call FindCharVisual('F', 1)<CR>
-xmap t :call FindCharVisual('t', 0)<CR>
-xmap T :call FindCharVisual('T', 1)<CR>
+xmap f :call FindCharVisual('f', 0, '')<CR>
+xmap F :call FindCharVisual('F', 1, '')<CR>
+xmap t :call FindCharVisual('t', 0, '\zs.\ze')<CR>
+xmap T :call FindCharVisual('T', 1, '\zs.\ze')<CR>
 
-noremap <expr> n 'nN'[t:reversesearch]
-noremap <expr> N 'Nn'[t:reversesearch]
+noremap <expr> n 'nN'[t:reverse_search]
+noremap <expr> N 'Nn'[t:reverse_search]
 
 cnoremap <CR> <cmd>call ResetReverseSearchFlag()<CR><CR>
 
