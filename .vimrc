@@ -131,16 +131,22 @@ nnoremap <Esc> :nohlsearch<Return><Esc>
 " Update search register when using f/t
 function FindChar(action, reverse, search_affix)
   let t:reverse_search = a:reverse
-  let c = nr2char(getchar())
+  let char = nr2char(getchar())
+  
+  if char == '\'
+    let query = '\\'
+  else
+    let query = '\C\V'.char.'\v'
+  endif
   
   if a:reverse
-    call setreg('/', c.a:search_affix)
+    call setreg('/', query.a:search_affix)
   else
-    call setreg('/', a:search_affix.c)
+    call setreg('/', a:search_affix.query)
   endif
   
   nohlsearch
-  execute 'normal! '.a:action.c
+  execute 'normal! '.a:action.char
 endfunction
 
 function FindCharVisual(action, reverse, search_affix)
