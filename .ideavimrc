@@ -1,3 +1,4 @@
+set clipboard-=ideaput
 set ignorecase
 set incsearch
 set number
