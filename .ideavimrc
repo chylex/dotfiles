@@ -94,10 +94,10 @@ map ů %
 map gů g%
 
 " Camel humps
-noremap L [w
+noremap L ]w
 noremap H [b
-xnoremap L ]w
-xnoremap H ]b
+nnoremap L [w
+nnoremap H ]b
 
 " Navigate to end of previous word
 noremap <A-b> ge
