@@ -1,4 +1,5 @@
 set clipboard-=ideaput
+set hlsearch
 set ignorecase
 set incsearch
 set number
@@ -136,6 +137,9 @@ nnoremap gp `[v`]
 " Put without yank
 xnoremap p P
 xnoremap P p
+
+" Clear search highlights
+nnoremap <Esc> :nohlsearch<Return><Esc>
 
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
