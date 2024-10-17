@@ -50,8 +50,10 @@ sethandler <A-B> a:vim
 sethandler <A-H> a:vim
 sethandler <A-L> a:vim
 sethandler <A-N> a:vim
+sethandler <A-O> a:vim
 sethandler <A-P> a:vim
 sethandler <A-S-B> a:vim
+sethandler <A-S-O> a:vim
 sethandler <A-V> a:vim
 sethandler <A-X> a:vim
 sethandler <C-D> a:vim
@@ -59,8 +61,8 @@ sethandler <C-I> a:vim
 sethandler <C-N> a:vim
 sethandler <C-O> a:vim
 sethandler <C-P> a:vim
-sethandler <C-U> a:vim
 sethandler <C-S-W> a:vim
+sethandler <C-U> a:vim
 sethandler <S-BS> a:vim
 
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
@@ -114,6 +116,10 @@ nnoremap d) d])
 nnoremap c( c[((
 nnoremap d( c[((<Esc>l
 
+" Create lines
+nnoremap <A-o> o<Esc>$
+nnoremap <A-S-o> O<Esc>$
+
 " Delete lines
 nnoremap C cc
 xnoremap C cc
@@ -121,7 +127,7 @@ nnoremap D dd
 xnoremap D dd
 
 " Enter visual block mode
-map <A-v> <C-V>
+map <A-v> <C-v>
 
 " Indent keeping selection
 xnoremap < <gv
