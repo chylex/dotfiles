@@ -160,8 +160,8 @@ map ( <Action>(GotoPreviousError)
 map ) <Action>(GotoNextError)
 
 " Navigate to previous/next method
-map [[ <Action>(MethodUp)
-map ]] <Action>(MethodDown)
+map [ <Action>(MethodUp)
+map ] <Action>(MethodDown)
 
 " Navigate paragraphs at indentation
 map { <Plug>(ParagraphPrevMotion)$
@@ -186,6 +186,9 @@ map \\ <C-w>
 map \\\\ <C-w><C-w>
 
 " Rebind repurposed commands
+noremap g] ]
+noremap g[ [
+
 nnoremap M m
 nnoremap Z z
 
