@@ -65,6 +65,11 @@ sethandler <C-S-W> a:vim
 sethandler <C-U> a:vim
 sethandler <S-BS> a:vim
 
+sethandler <C-Left> a:vim
+sethandler <C-Right> a:vim
+sethandler <S-Left> a:vim
+sethandler <S-Right> a:vim
+
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
 Plug 'vim-exchange'
