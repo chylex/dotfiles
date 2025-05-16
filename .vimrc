@@ -110,6 +110,8 @@ nnoremap d( c[((<Esc>l
 nnoremap <M-o> o<Esc>$
 nnoremap <M-S-o> O<Esc>$ " TODO does not leave insert mode properly?
 
+nnoremap g<CR> i<CR><Esc>l
+
 " Delete lines
 nnoremap C cc
 xnoremap C cc

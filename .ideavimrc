@@ -127,6 +127,8 @@ nnoremap d( c[((<Esc>l
 nnoremap <A-o> o<Esc>$
 nnoremap <A-S-o> O<Esc>$
 
+nnoremap g<CR> i<CR><Esc>l
+
 " Delete lines
 nnoremap C cc
 xnoremap C cc
