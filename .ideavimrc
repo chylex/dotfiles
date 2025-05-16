@@ -48,6 +48,8 @@ sethandler <C-\> a:ide
 
 sethandler <A-B> a:vim
 sethandler <A-H> a:vim
+sethandler <A-J> a:vim
+sethandler <A-K> a:vim
 sethandler <A-L> a:vim
 sethandler <A-N> a:vim
 sethandler <A-O> a:vim
@@ -172,6 +174,13 @@ map ] <Action>(MethodDown)
 map { <Plug>(ParagraphPrevMotion)$
 map } <Plug>(ParagraphNextMotion)$
 
+" Multiple carets
+map <A-j> <Action>(EditorCloneCaretBelow)
+map <A-k> <Action>(EditorCloneCaretAbove)
+
+imap <A-j> <Action>(EditorCloneCaretBelow)
+imap <A-k> <Action>(EditorCloneCaretAbove)
+
 " Manage editor tabs
 map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
 map <C-w>s <Action>(MoveTabDown)
@@ -208,8 +217,6 @@ map ge <Action>(VcsShowNextChangeMarker)
 map gE <Action>(VcsShowPrevChangeMarker)
 map gf <Action>(VimJumpToSource)<Action>(HideActiveWindow)
 map gi <Action>(GotoImplementation)
-map gj <Action>(EditorCloneCaretBelow)
-map gk <Action>(EditorCloneCaretAbove)
 map gr <Action>(RecentLocations)
 map gR <Action>(RecentChangedFiles)
 map gs <Action>(GotoSuperMethod)

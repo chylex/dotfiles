@@ -95,6 +95,11 @@ xnoremap <expr> j v:count ? 'j' : 'gj'
 nnoremap <expr> k v:count ? 'k' : 'gk'
 xnoremap <expr> k v:count ? 'k' : 'gk'
 
+nnoremap gj j
+xnoremap gj j
+nnoremap gk k
+xnoremap gk k
+
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
 nnoremap d) d])
