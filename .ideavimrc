@@ -177,11 +177,11 @@ map { <Plug>(ParagraphPrevMotion)$
 map } <Plug>(ParagraphNextMotion)$
 
 " Multiple carets
-map <A-j> <Action>(EditorCloneCaretBelow)
-map <A-k> <Action>(EditorCloneCaretAbove)
+map <expr> <A-j> pumvisible() ? '<Action>(EditorDown)' : '<Action>(EditorCloneCaretBelow)'
+map <expr> <A-k> pumvisible() ? '<Action>(EditorUp)' : '<Action>(EditorCloneCaretAbove)'
 
-imap <A-j> <Action>(EditorCloneCaretBelow)
-imap <A-k> <Action>(EditorCloneCaretAbove)
+imap <expr> <A-j> pumvisible() ? '<Action>(EditorDown)' : '<Action>(EditorCloneCaretBelow)'
+imap <expr> <A-k> pumvisible() ? '<Action>(EditorUp)' : '<Action>(EditorCloneCaretAbove)'
 
 " Manage editor tabs
 map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
