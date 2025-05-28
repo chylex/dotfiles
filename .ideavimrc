@@ -113,10 +113,6 @@ nnoremap H [b
 noremap <A-b> ge
 noremap <A-S-b> gE
 
-" Increment/decrement numbers
-noremap <Bar>+ <C-a>
-noremap <Bar>- <C-x>
-
 " Navigate unmatched parentheses/braces
 noremap g( [(
 noremap g) ])
