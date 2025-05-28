@@ -103,7 +103,7 @@ noremap § ;
 map ů %
 map gů g%
 
-" Camel humps
+" Navigate camel humps
 noremap L [w
 noremap H [b
 nnoremap L [w
@@ -116,6 +116,12 @@ noremap <A-S-b> gE
 " Increment/decrement numbers
 noremap <Bar>+ <C-a>
 noremap <Bar>- <C-x>
+
+" Navigate unmatched parentheses/braces
+noremap g( [(
+noremap g) ])
+noremap g{ [{
+noremap g} ]}
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
@@ -227,8 +233,6 @@ map gt gg<Action>(KM.GotoNextTypeInFile)
 map gT <Action>(KM.GotoNextTypeInFile)
 map gu <Action>(ShowUsages)
 map gU <Action>(FindUsages)
-map g( <Action>(KM.GotoPreviousErrorInOtherMode)
-map g) <Action>(KM.GotoNextErrorInOtherMode)
 
 " Repurpose 'z' for view actions and debugger
 map za <Action>(Annotate)

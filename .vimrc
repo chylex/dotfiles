@@ -74,7 +74,7 @@ map ů %
 map gů g%
 sunmap ů
 
-" Camel humps (https://github.com/vim-scripts/camelcasemotion)
+" Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
 map L <Plug>CamelCaseMotion_w
 map H <Plug>CamelCaseMotion_b
 sunmap L
@@ -99,6 +99,12 @@ nnoremap gj j
 xnoremap gj j
 nnoremap gk k
 xnoremap gk k
+
+" Navigate unmatched parentheses/braces
+noremap g( [(
+noremap g) ])
+noremap g{ [{
+noremap g} ]}
 
 " Edit from cursor to start/end of parenthesized block
 nnoremap c) c])
