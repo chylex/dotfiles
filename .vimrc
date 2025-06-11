@@ -113,9 +113,8 @@ nnoremap c( c[((
 nnoremap d( c[((<Esc>l
 
 " Create lines
-nnoremap <M-o> o<Esc>$
-nnoremap <M-S-o> O<Esc>$ " TODO does not leave insert mode properly?
-
+nnoremap go o<Esc>$
+nnoremap gO O<Esc>$
 nnoremap g<CR> i<CR><Esc>l
 
 " Delete lines

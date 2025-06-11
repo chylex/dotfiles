@@ -126,9 +126,8 @@ nnoremap c( c[((
 nnoremap d( c[((<Esc>l
 
 " Create lines
-nnoremap <A-o> o<Esc>$
-nnoremap <A-S-o> O<Esc>$
-
+nnoremap go o<Esc>$
+nnoremap gO O<Esc>$
 nnoremap g<CR> i<CR><Esc>l
 
 " Delete lines
