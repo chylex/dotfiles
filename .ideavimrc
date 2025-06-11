@@ -157,6 +157,9 @@ xnoremap P p
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
 
+" Code completion
+imap <expr> ! pumvisible() ? '<Action>(EditorChooseLookupItem)<Esc>mzF.bi!<Esc>`zla' : '!'
+
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
 imap <A-p> <Action>(ParameterInfo)
