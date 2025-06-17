@@ -158,7 +158,9 @@ xnoremap P p
 nnoremap <Esc> :nohlsearch<Return><Esc>
 
 " Code completion
-imap <expr> ! pumvisible() ? '<Action>(EditorChooseLookupItem)<Esc>mzF.bi!<Esc>`zla' : '!'
+if &ide !~? 'rider'
+  imap <expr> ! pumvisible() ? '<Action>(EditorChooseLookupItem)<Esc>mzF.bi!<Esc>`zla' : '!'
+endif
 
 " Show parameter info
 nmap <A-p> <Action>(ParameterInfo)
