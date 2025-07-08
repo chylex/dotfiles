@@ -1,5 +1,8 @@
 set autoindent
+set backspace=indent,eol,start
 set encoding=utf-8
+set guifont=Cascadia_Mono:h12:cANSI:qDRAFT
+set guioptions-=t " Remove menu tearoff
 set history=1024
 set hlsearch
 set ignorecase
@@ -14,12 +17,14 @@ set mouse=a
 set noerrorbells
 set noshowcmd
 set noshowmode
-set number
 set nrformats-=octal
+set number
 set relativenumber
 set scrolloff=999
 set shiftwidth=0
-set showbreak=↪
+set shortmess-=S " Show search count
+set shortmess-=l " Show full description for lines and bytes
+set showbreak=↪\ 
 set showmatch
 set sidescrolloff=999
 set smartcase
@@ -27,22 +32,35 @@ set tabstop=4
 set ttimeout
 set ttimeoutlen=50
 set ttymouse=xterm2
+set virtualedit=onemore
 set wildmenu
+set winaltkeys=no
 set wrap
 
-" Show full description for lines and bytes
-set shortmess-=l
-
-" Show search count
-set shortmess-=S
+" Windows paths
+set packpath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
+set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
 
 " Color scheme
 syntax enable
-colorscheme custom
-highlight LineNr    ctermfg=244
-highlight IncSearch ctermfg=251 ctermbg=238
-highlight Search    ctermfg=251 ctermbg=238
-highlight Visual    ctermfg=240 ctermbg=250
+
+if has("gui_running")
+  colorscheme retrobox
+  highlight NonText ctermfg=14 guifg=#7c6f64
+else
+  colorscheme custom
+  highlight LineNr    ctermfg=244
+  highlight IncSearch ctermfg=251 ctermbg=238
+  highlight Search    ctermfg=251 ctermbg=238
+  highlight Visual    ctermfg=240 ctermbg=250
+endif
+
+" Windows GUI
+if has("win32") && has("gui_running")
+  au GUIEnter * simalt ~x " Maximize window
+  set renderoptions=type:directx " Fix unicode rendering
+  set showbreak=→\ 
+endif
 
 " Fix Alt mappings (https://github.com/vim/vim/issues/2588#issuecomment-697959290)
 for ord in range(65, 90) + range(97, 122)
