@@ -142,7 +142,17 @@ nnoremap D dd
 xnoremap D dd
 
 " Enter visual block mode
-map <M-v> <C-v>
+noremap <M-v> <C-v>
+
+" Use Ctrl for selection and clipboard
+noremap <C-a> ggVG
+
+vnoremap <C-c> "+y
+vnoremap <C-x> "+x
+
+noremap <C-v> "+gP
+inoremap <C-v> <Esc>:set paste<CR>i<C-r>+<Esc>:set nopaste<CR>i
+cnoremap <C-v> <C-r>+
 
 " Indent keeping selection
 xnoremap < <gv
