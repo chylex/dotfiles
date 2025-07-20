@@ -145,10 +145,11 @@ xnoremap D dd
 noremap <M-v> <C-v>
 
 " Use Ctrl for selection and clipboard
-noremap <C-a> ggVG
+nnoremap <C-a> ggVG
+xnoremap <C-a> ggoG
 
-vnoremap <C-c> "+y
-vnoremap <C-x> "+x
+xnoremap <C-c> "+y
+xnoremap <C-x> "+x
 
 noremap <C-v> "+gP
 inoremap <C-v> <Esc>:set paste<CR>i<C-r>+<Esc>:set nopaste<CR>i
