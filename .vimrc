@@ -10,7 +10,8 @@ set incsearch
 set infercase
 set laststatus=2
 set linebreak
-set listchars=space:·,tab:>·,trail:~,extends:>,precedes:<
+set list
+set listchars=lead:·,trail:·,tab:→\ ,extends:>,precedes:<
 set modeline
 set modelines=2
 set mouse=a
@@ -55,9 +56,12 @@ else
   highlight Visual    ctermfg=240 ctermbg=250
 endif
 
+highlight SpecialKey ctermfg=8 guifg=#584f46
+
 " Windows GUI
 if has("win32") && has("gui_running")
   au GUIEnter * simalt ~x " Maximize window
+  set listchars+=tab:▶\ 
   set renderoptions=type:directx " Fix unicode rendering
   set showbreak=→\ 
 endif
