@@ -90,8 +90,8 @@ map í 9
 map é 0
 
 " Move some commands closer on Czech keyboard layout
+map ů %
 nnoremap ú @@
-noremap ů %
 noremap , +
 
 noremap § `
