@@ -101,6 +101,9 @@ nnoremap m§ m
 sunmap ů
 sunmap §
 
+" Enter visual block mode
+noremap <M-v> <C-v>
+
 " Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
 map L <Plug>CamelCaseMotion_w
 map H <Plug>CamelCaseMotion_b
@@ -144,25 +147,13 @@ nnoremap go o<Esc>$
 nnoremap gO O<Esc>$
 nnoremap g<CR> i<CR><Esc>l
 
-" Delete lines
+" Edit current line
 nnoremap C cc
 xnoremap C cc
 nnoremap D dd
 xnoremap D dd
-
-" Enter visual block mode
-noremap <M-v> <C-v>
-
-" Use Ctrl for selection and clipboard
-nnoremap <C-a> ggVG
-xnoremap <C-a> ggoG
-
-xnoremap <C-c> "+y
-xnoremap <C-x> "+x
-
-noremap <C-v> "+gP
-inoremap <C-v> <Esc>:set paste<CR>i<C-r>+<Esc>:set nopaste<CR>i
-cnoremap <C-v> <C-r>+
+nnoremap < <<
+nnoremap > >>
 
 " Indent keeping selection
 xnoremap < <gv
@@ -181,6 +172,17 @@ xnoremap P p
 
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
+
+" Use Ctrl for selection and clipboard
+nnoremap <C-a> ggVG
+xnoremap <C-a> ggoG
+
+xnoremap <C-c> "+y
+xnoremap <C-x> "+x
+
+noremap <C-v> "+gP
+inoremap <C-v> <Esc>:set paste<CR>i<C-r>+<Esc>:set nopaste<CR>i
+cnoremap <C-v> <C-r>+
 
 " Update search register when using f/t
 function FindChar(action, reverse, search_affix)

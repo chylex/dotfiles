@@ -109,6 +109,9 @@ nnoremap m§ m
 sunmap ů
 sunmap §
 
+" Enter visual block mode
+map <A-v> <C-v>
+
 " Navigate camel humps
 noremap L [w
 noremap H [b
@@ -136,14 +139,13 @@ nnoremap go o<Esc>$
 nnoremap gO O<Esc>$
 nnoremap g<CR> i<CR><Esc>l
 
-" Delete lines
+" Edit current line
 nnoremap C cc
 xnoremap C cc
 nnoremap D dd
 xnoremap D dd
-
-" Enter visual block mode
-map <A-v> <C-v>
+nnoremap < <<
+nnoremap > >>
 
 " Indent keeping selection
 xnoremap < <gv
