@@ -55,6 +55,10 @@ sethandler <A-N> a:vim
 sethandler <A-O> a:vim
 sethandler <A-P> a:vim
 sethandler <A-S-B> a:vim
+sethandler <A-S-H> a:vim
+sethandler <A-S-J> a:vim
+sethandler <A-S-K> a:vim
+sethandler <A-S-L> a:vim
 sethandler <A-S-O> a:vim
 sethandler <A-V> a:vim
 sethandler <A-X> a:vim
@@ -193,6 +197,13 @@ map ] <Action>(MethodDown)
 " Navigate paragraphs at indentation
 map { <Plug>(ParagraphPrevMotion)$
 map } <Plug>(ParagraphNextMotion)$
+
+" Move statement/element
+map <A-S-h> <Action>(MoveElementLeft)
+map <A-S-l> <Action>(MoveElementRight)
+
+map <A-S-j> <Action>(MoveStatementDown)
+map <A-S-k> <Action>(MoveStatementUp)
 
 " Multiple carets
 map <expr> <A-j> pumvisible() ? '<Action>(EditorDown)' : '<Action>(EditorCloneCaretBelow)'
