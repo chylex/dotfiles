@@ -152,6 +152,10 @@ xnoremap < <gv
 xnoremap > >gv
 xnoremap = =gv
 
+" Extend selection
+xmap x <Action>(EditorSelectWord)
+xmap X <Action>(EditorUnSelectWord)
+
 " Turn capital letters into opposite actions
 " nnoremap U :redo<CR> " Handled by custom version of IdeaVIM
 
