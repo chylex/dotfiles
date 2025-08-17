@@ -184,6 +184,10 @@ noremap <C-v> "+gP
 inoremap <C-v> <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
 cnoremap <C-v> <C-r>+
 
+nnoremap <C-s> :w<CR>
+xnoremap <C-s> :<C-U>w<CR>gv
+inoremap <C-s> <C-o>:w<CR>
+
 " Update search register when using f/t
 function FindChar(action, reverse, search_affix)
   let t:reverse_search = a:reverse
