@@ -181,7 +181,7 @@ xnoremap <C-c> "+y
 xnoremap <C-x> "+x
 
 noremap <C-v> "+gP
-inoremap <C-v> <Esc>:set paste<CR>i<C-r>+<Esc>:set nopaste<CR>i
+inoremap <C-v> <C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>
 cnoremap <C-v> <C-r>+
 
 " Update search register when using f/t
