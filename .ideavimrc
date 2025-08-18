@@ -76,6 +76,12 @@ sethandler <C-Right> a:vim
 sethandler <S-Left> a:vim
 sethandler <S-Right> a:vim
 
+if &ide =~? 'rider'
+  " These shortcuts are broken in Rider for some reason...
+  sethandler <A-S-H> a:ide
+  sethandler <A-S-L> a:ide
+endif
+
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
 Plug 'vim-exchange'
