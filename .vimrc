@@ -60,7 +60,9 @@ highlight SpecialKey ctermfg=8 guifg=#584f46
 
 " Windows GUI
 if has("win32") && has("gui_running")
-  au GUIEnter * simalt ~x " Maximize window
+  autocmd GUIEnter * simalt ~x " Maximize window
+  autocmd GUIEnter * set visualbell t_vb= " Disable bell sound
+  
   set listchars+=tab:▶\ 
   set renderoptions=type:directx " Fix unicode rendering
   set showbreak=→\ 
