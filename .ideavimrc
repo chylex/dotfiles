@@ -52,6 +52,7 @@ sethandler <A-H> a:vim
 sethandler <A-J> a:vim
 sethandler <A-K> a:vim
 sethandler <A-L> a:vim
+sethandler <A-M> a:vim
 sethandler <A-N> a:vim
 sethandler <A-O> a:vim
 sethandler <A-P> a:vim
@@ -61,6 +62,7 @@ sethandler <A-S-H> a:vim
 sethandler <A-S-J> a:vim
 sethandler <A-S-K> a:vim
 sethandler <A-S-L> a:vim
+sethandler <A-S-M> a:vim
 sethandler <A-S-O> a:vim
 sethandler <A-V> a:vim
 sethandler <A-X> a:vim
@@ -165,8 +167,8 @@ xnoremap > >gv
 xnoremap = =gv
 
 " Extend selection
-xmap x <Action>(EditorSelectWord)
-xmap X <Action>(EditorUnSelectWord)
+map <A-m> <Action>(EditorSelectWord)
+map <A-S-m> <Action>(EditorUnSelectWord)
 
 " Turn capital letters into opposite actions
 " nnoremap U :redo<CR> " Handled by custom version of IdeaVIM
