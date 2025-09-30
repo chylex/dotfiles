@@ -47,6 +47,7 @@ sethandler <C-Y> a:ide
 sethandler <C-\> a:ide
 
 sethandler <A-B> a:vim
+sethandler <A-E> a:vim
 sethandler <A-H> a:vim
 sethandler <A-J> a:vim
 sethandler <A-K> a:vim
@@ -55,6 +56,7 @@ sethandler <A-N> a:vim
 sethandler <A-O> a:vim
 sethandler <A-P> a:vim
 sethandler <A-S-B> a:vim
+sethandler <A-S-E> a:vim
 sethandler <A-S-H> a:vim
 sethandler <A-S-J> a:vim
 sethandler <A-S-K> a:vim
@@ -129,8 +131,8 @@ nnoremap L [w
 nnoremap H [b
 
 " Navigate to end of previous word
-noremap <A-b> ge
-noremap <A-S-b> gE
+noremap <A-e> ge
+noremap <A-S-e> gE
 
 " Navigate unmatched parentheses/braces
 noremap g( [(

@@ -118,8 +118,8 @@ omap iH <Plug>CamelCaseMotion_ib
 xmap iH <Plug>CamelCaseMotion_ib
 
 " Navigate to end of previous word
-noremap <M-b> ge
-noremap <M-S-b> gE
+noremap <M-e> ge
+noremap <M-S-e> gE
 
 " Navigate soft-wrapped lines
 nnoremap <expr> j v:count ? 'j' : 'gj'
