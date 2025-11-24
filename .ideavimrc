@@ -222,6 +222,8 @@ map <expr> <A-k> pumvisible() ? '<Action>(EditorUp)' : '<Action>(EditorCloneCare
 imap <expr> <A-j> pumvisible() ? '<Action>(EditorDown)' : '<Action>(EditorCloneCaretBelow)'
 imap <expr> <A-k> pumvisible() ? '<Action>(EditorUp)' : '<Action>(EditorCloneCaretAbove)'
 
+xmap gl <Action>(EditorAddCaretPerSelectedLine)
+
 " Manage editor tabs
 map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
 map <C-w>s <Action>(MoveTabDown)
