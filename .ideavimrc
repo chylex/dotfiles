@@ -230,6 +230,7 @@ map <C-w>s <Action>(MoveTabDown)
 map <C-w>u <Action>(Unsplit)
 map <C-w>U <Action>(UnsplitAll)
 map <C-w>v <Action>(MoveTabRight)
+map <C-w>p <Action>(PinActiveEditorTab)
 
 noremap <C-w>S <C-w>s
 noremap <C-w>V <C-w>v
