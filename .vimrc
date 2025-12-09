@@ -1,5 +1,6 @@
 set autoindent
 set backspace=indent,eol,start
+set completeopt=fuzzy,menuone,preview
 set encoding=utf-8
 set guifont=Cascadia_Mono:h12:cANSI:qDRAFT
 set guioptions-=t " Remove menu tearoff
@@ -174,6 +175,13 @@ xnoremap P p
 
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
+
+" Completion
+inoremap <C-Space> <C-n>
+inoremap <expr> j pumvisible() ? '<C-n>' : 'j'
+inoremap <expr> k pumvisible() ? '<C-p>' : 'k'
+inoremap <expr> <Esc> pumvisible() ? '<C-e>' : '<Esc>'
+inoremap <expr> <Enter> pumvisible() ? '<C-y>' : '<Enter>'
 
 " Use Ctrl for selection and clipboard
 nnoremap <C-a> ggVG
