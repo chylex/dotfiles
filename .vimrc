@@ -17,6 +17,7 @@ set modeline
 set modelines=2
 set mouse=a
 set noerrorbells
+set nojoinspaces
 set noshowcmd
 set noshowmode
 set nrformats-=octal
