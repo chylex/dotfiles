@@ -1,8 +1,10 @@
-bind "set completion-ignore-case on"
-bind "set show-all-if-ambiguous on"
+if [[ $- = *i* ]]; then
+  bind "set completion-ignore-case on"
+  bind "set show-all-if-ambiguous on"
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
+  bind '"\e[A": history-search-backward'
+  bind '"\e[B": history-search-forward'
+fi
 
 alias gh='history|grep'
 alias less='less -R --mouse'
