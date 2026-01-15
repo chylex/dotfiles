@@ -40,6 +40,7 @@ function ssh() {
     tmux rename-window -t"${TMUX_PANE}" "$*"
     command ssh "$@"
     tmux set-window-option automatic-rename "on"
+    vim +q # Fix terminal
   else
     command ssh "$@"
   fi
