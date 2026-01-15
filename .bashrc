@@ -6,6 +6,10 @@ if [[ $- = *i* ]]; then
   bind '"\e[B": history-search-forward'
 fi
 
+shopt -s histappend
+HISTCONTROL=ignoreboth
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 alias gh='history|grep'
 alias less='less -R --mouse'
 alias zless='zless -R --mouse'
