@@ -1,6 +1,6 @@
 set autoindent
 set backspace=indent,eol,start
-set completeopt=fuzzy,menuone,preview
+set completeopt=menuone,preview
 set encoding=utf-8
 set guifont=Cascadia_Mono:h12:cANSI:qDRAFT
 set guioptions-=t " Remove menu tearoff
@@ -39,6 +39,10 @@ set virtualedit=onemore
 set wildmenu
 set winaltkeys=no
 set wrap
+
+if has("patch-9.1.0463")
+  set completeopt+=fuzzy
+endif
 
 " Windows paths
 set packpath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
