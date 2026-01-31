@@ -181,6 +181,9 @@ xnoremap P p
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
 
+" Prevent deleting whitespace on empty lines when exiting Normal mode
+inoremap <silent> <Esc> <C-O>:stopinsert<CR>
+
 " Completion
 inoremap <C-Space> <C-n>
 inoremap <expr> j pumvisible() ? '<C-n>' : 'j'
