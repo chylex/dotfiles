@@ -153,7 +153,7 @@ nnoremap d( c[((<Esc>l
 " Create lines
 nnoremap go o<Esc>$
 nnoremap gO O<Esc>$
-nnoremap g<CR> i<CR><Esc>l
+nnoremap g<CR> i<CR><Left><Esc>
 
 " Edit current line
 nnoremap C cc
