@@ -252,10 +252,16 @@ noremap g[ [
 nnoremap M m
 nnoremap Z z
 
-" Repurpose 'Enter' for statement completion
+" Repurpose 'Enter' for statement completion ('isactionenabled' requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
-imap <C-Enter> <Action>(EditorCompleteStatement)
-imap <D-Enter> <Action>(EditorCompleteStatement)
+
+imap <expr> <C-Enter> isactionenabled('Console.Jdbc.Execute')? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
+imap <expr> <D-Enter> isactionenabled('Console.Jdbc.Execute')? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
+
+nmap <C-Enter> <Action>(Console.Jdbc.Execute)
+nmap <D-Enter> <Action>(Console.Jdbc.Execute)
+vmap <C-Enter> <Action>(Console.Jdbc.Execute)
+vmap <D-Enter> <Action>(Console.Jdbc.Execute)
 
 " Repurpose 'g' for navigation (VimJumpToSource requires a custom version of IdeaVIM)
 map gb <Action>(GotoNextBookmark)
