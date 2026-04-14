@@ -66,6 +66,8 @@ sethandler <A-S-M> a:vim
 sethandler <A-S-O> a:vim
 sethandler <A-V> a:vim
 sethandler <A-X> a:vim
+sethandler <C-A-S-D> a:vim
+sethandler <C-A-S-S> a:vim
 sethandler <C-D> a:vim
 sethandler <C-I> a:vim
 sethandler <C-N> a:vim
@@ -73,6 +75,8 @@ sethandler <C-O> a:vim
 sethandler <C-P> a:vim
 sethandler <C-S-W> a:vim
 sethandler <C-U> a:vim
+sethandler <D-S-D> a:vim
+sethandler <D-S-S> a:vim
 sethandler <S-BS> a:vim
 
 sethandler <C-Enter> a:vim
@@ -201,6 +205,11 @@ map <S-BS> <Action>(Forward)
 " Navigate inspection highlights
 map ( <Action>(GotoPreviousError)
 map ) <Action>(GotoNextError)
+
+map <C-A-S-s> <Action>(KM.GotoPreviousErrorInOtherMode)
+map <D-S-s> <Action>(KM.GotoPreviousErrorInOtherMode)
+map <C-A-S-d> <Action>(KM.GotoNextErrorInOtherMode)
+map <D-S-d> <Action>(KM.GotoNextErrorInOtherMode)
 
 " Navigate to previous/next method
 map [ <Action>(MethodUp)
