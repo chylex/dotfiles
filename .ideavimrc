@@ -264,8 +264,8 @@ nnoremap Z z
 " Repurpose 'Enter' for statement completion ('isactionenabled' requires a custom version of IdeaVIM)
 nmap <Enter> <Action>(EditorCompleteStatement)
 
-imap <expr> <C-Enter> isactionenabled('Console.Jdbc.Execute')? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
-imap <expr> <D-Enter> isactionenabled('Console.Jdbc.Execute')? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
+imap <expr> <C-Enter> isactionenabled('Console.Jdbc.Execute') ? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
+imap <expr> <D-Enter> isactionenabled('Console.Jdbc.Execute') ? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
 
 nmap <C-Enter> <Action>(Console.Jdbc.Execute)
 nmap <D-Enter> <Action>(Console.Jdbc.Execute)
