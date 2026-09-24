@@ -98,6 +98,7 @@ endif
 
 " Enable plugins (https://github.com/JetBrains/ideavim/wiki/IdeaVim-Plugins)
 Plug 'argtextobj.vim'
+Plug 'vim-abolish'
 Plug 'vim-exchange'
 Plug 'vim-highlightedyank'
 Plug 'vim-indent-object'
@@ -106,6 +107,7 @@ Plug 'vim-multiple-cursors'
 Plug 'vim-paragraph-motion'
 Plug 'vim-surround'
 Plug 'vim-textobj-entire'
+Plug 'vim-textobj-function'
 
 " https://vimhelp.org/index.txt.html
 
