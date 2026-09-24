@@ -254,6 +254,13 @@ imap <expr> <A-k> pumvisible() ? '<Action>(EditorUp)' : '<Action>(EditorCloneCar
 
 xmap gl <Action>(EditorAddCaretPerSelectedLine)
 
+let g:multi_cursor_use_default_mapping = 0
+
+nmap <A-n> <Plug>NextWholeOccurrence
+xmap <A-n> <Plug>NextWholeOccurrence
+xmap <A-x> <Plug>SkipOccurrence
+xmap <A-p> <Plug>RemoveOccurrence
+
 " Manage editor tabs
 map <C-w>m <Action>(MoveEditorToOppositeTabGroup)
 map <C-w>s <Action>(MoveTabDown)
