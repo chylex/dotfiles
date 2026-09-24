@@ -85,6 +85,10 @@ sethandler <C-Left> a:vim
 sethandler <S-Left> a:vim
 sethandler <C-Right> a:vim
 sethandler <S-Right> a:vim
+sethandler <C-Up> a:vim
+sethandler <S-Up> a:vim
+sethandler <C-Down> a:vim
+sethandler <S-Down> a:vim
 
 if &ide =~? 'rider'
   " These shortcuts are broken in Rider for some reason...
@@ -166,6 +170,21 @@ nnoremap D dd
 xnoremap D dd
 nnoremap < <<
 nnoremap > >>
+
+" Navigate with selection
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+nmap <S-Home> v<Home>
+nmap <S-End> v<End>
+
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+vmap <S-Home> <Home>
+vmap <S-End> <End>
 
 " Indent keeping selection
 xnoremap < <gv
