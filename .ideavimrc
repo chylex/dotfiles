@@ -291,8 +291,8 @@ noremap g[ [
 nnoremap M m
 nnoremap Z z
 
-" Repurpose 'Enter' for statement completion ('isactionenabled' requires a custom version of IdeaVIM)
-nmap <Enter> <Action>(EditorCompleteStatement)
+" Repurpose 'Enter' for statement completion ('isactionenabled' and 'isinplacerenaming' require a custom version of IdeaVIM)
+nmap <expr> <Enter> isinplacerenaming() ? '<Action>(NextTemplateVariable)' : '<Action>(EditorCompleteStatement)'
 
 imap <expr> <C-Enter> isactionenabled('Console.Jdbc.Execute') ? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
 imap <expr> <D-Enter> isactionenabled('Console.Jdbc.Execute') ? '<Action>(Console.Jdbc.Execute)' : '<Action>(EditorCompleteStatement)'
