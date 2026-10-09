@@ -35,10 +35,10 @@
     - name: Update .vim folder
       copy:
         remote_src: true
-        directory_mode: true
         src: ~/.dotfiles/.vim
         dest: ~/
-        mode: "700"
+        mode: "600"
+        directory_mode: "700"
 
     - name: Update .tmux.conf file
       copy:
