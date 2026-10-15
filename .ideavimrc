@@ -343,6 +343,7 @@ map zr <Action>(RunToCursor)
 map zR <Action>(ForceRunToCursor)
 map zs <Action>(osmedile.intellij.stringmanip.PopupChoiceAction)
 map zt <Action>(ExpressionTypeInfo)
+map zw <Action>(EditorToggleUseSoftWraps)
 map zx <Action>(EvaluateExpression)
 
 map zht <Action>(TypeHierarchy)
