@@ -138,6 +138,16 @@ nnoremap m§ m
 " Enter visual block mode
 map <A-v> <C-v>
 
+" Invert soft wrap navigation bindings
+noremap 0 g0
+noremap g0 0
+
+noremap ^ g^
+noremap g^ ^
+
+noremap $ g$
+noremap g$ $
+
 " Navigate camel humps
 noremap L [w
 noremap H [b
