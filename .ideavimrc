@@ -1,3 +1,6 @@
+" Some of these mapping require a custom build of IdeaVIM: https://github.com/chylex/IntelliJ-IdeaVim
+" One of the changes is that 'map' ignores Select mode to keep mappings simpler.
+
 set clipboard-=ideaput
 set hlsearch
 set ignorecase
@@ -132,17 +135,12 @@ noremap § `
 noremap §§ ``
 nnoremap m§ m
 
-sunmap ů
-sunmap §
-
 " Enter visual block mode
 map <A-v> <C-v>
 
 " Navigate camel humps
 noremap L [w
 noremap H [b
-nnoremap L [w
-nnoremap H [b
 
 " Navigate to end of previous word
 noremap <A-e> ge
@@ -166,12 +164,9 @@ nnoremap gO O<Esc>$
 nnoremap g<CR> i<CR><Left><Esc>
 
 " Edit current line
-nnoremap C cc
-xnoremap C cc
-nnoremap D dd
-xnoremap D dd
-nnoremap < <<
-nnoremap > >>
+noremap C cc
+noremap D dd
+noremap < <<
 
 " Navigate with selection
 nmap <S-Up> v<Up>
