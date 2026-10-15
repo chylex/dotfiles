@@ -192,15 +192,19 @@ xnoremap = =gv
 map <A-m> <Action>(EditorSelectWord)
 map <A-S-m> <Action>(EditorUnSelectWord)
 
-" Turn capital letters into opposite actions
-" nnoremap U :redo<CR> " Handled by custom version of IdeaVIM
-
 " Reselect pasted text
 nnoremap gp `[v`]
 
 " Put without yank
 xnoremap p P
 xnoremap P p
+
+" Fix undo/redo
+nmap u <Action>($Undo)
+xmap u <Action>($Undo)
+
+nmap U <Action>($Redo)
+xmap U <Action>($Redo)
 
 " Clear search highlights
 nnoremap <Esc> :nohlsearch<Return><Esc>
