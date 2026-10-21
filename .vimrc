@@ -74,6 +74,9 @@ if has("win32") && has("gui_running")
   set showbreak=→\ 
 endif
 
+" Plugins with conflicting bindings
+packadd paragraph-motion
+
 " Fix Alt mappings (https://github.com/vim/vim/issues/2588#issuecomment-697959290)
 for ord in range(65, 90) + range(97, 122)
   let char = nr2char(ord)
@@ -155,10 +158,10 @@ noremap g{ [{
 noremap g} ]}
 
 " Edit from cursor to start/end of parenthesized block
-nnoremap c) c])
-nnoremap d) d])
-nnoremap c( c[((
-nnoremap d( c[((<Esc>l
+onoremap ) ])
+onoremap ( [(
+onoremap } ]}
+onoremap { [{
 
 " Create lines
 nnoremap go o<Esc>$

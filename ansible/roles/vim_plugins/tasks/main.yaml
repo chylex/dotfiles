@@ -3,22 +3,22 @@
 - name: Install and update vim plugins
   git:
     repo: "{{ item.repo }}"
-    dest: "~/.vim/pack/plugins/start/{{ item.name }}"
+    dest: "~/.vim/pack/plugins/{{ item.target }}/{{ item.name }}"
     single_branch: true
     recursive: false
   loop:
-    - { name: "camelcasemotion"       , repo: "https://github.com/vim-scripts/camelcasemotion" }
-    - { name: "easymotion"            , repo: "https://github.com/easymotion/vim-easymotion.git" }
-    - { name: "highlighted-yank"      , repo: "https://github.com/machakann/vim-highlightedyank.git" }
-    - { name: "indent-object"         , repo: "https://github.com/michaeljsmith/vim-indent-object.git" }
-    - { name: "lightline"             , repo: "https://github.com/itchyny/lightline.vim.git" }
-    - { name: "paragraph-motion"      , repo: "https://github.com/dbakker/vim-paragraph-motion.git" }
-    - { name: "rainbow"               , repo: "https://github.com/luochen1990/rainbow.git" }
-    - { name: "repeat"                , repo: "https://github.com/tpope/vim-repeat.git" }
-    - { name: "sleuth"                , repo: "https://github.com/tpope/vim-sleuth.git" }
-    - { name: "surround"              , repo: "https://github.com/tpope/vim-surround.git" }
-    - { name: "visual-multi"          , repo: "https://github.com/mg979/vim-visual-multi.git" }
-    - { name: "visual-star-search"    , repo: "https://github.com/nelstrom/vim-visual-star-search.git" }
+    - { name: "camelcasemotion"       , target: "start" , repo: "https://github.com/vim-scripts/camelcasemotion" }
+    - { name: "easymotion"            , target: "start" , repo: "https://github.com/easymotion/vim-easymotion.git" }
+    - { name: "highlighted-yank"      , target: "start" , repo: "https://github.com/machakann/vim-highlightedyank.git" }
+    - { name: "indent-object"         , target: "start" , repo: "https://github.com/michaeljsmith/vim-indent-object.git" }
+    - { name: "lightline"             , target: "start" , repo: "https://github.com/itchyny/lightline.vim.git" }
+    - { name: "paragraph-motion"      , target: "opt"   , repo: "https://github.com/dbakker/vim-paragraph-motion.git" }
+    - { name: "rainbow"               , target: "start" , repo: "https://github.com/luochen1990/rainbow.git" }
+    - { name: "repeat"                , target: "start" , repo: "https://github.com/tpope/vim-repeat.git" }
+    - { name: "sleuth"                , target: "start" , repo: "https://github.com/tpope/vim-sleuth.git" }
+    - { name: "surround"              , target: "start" , repo: "https://github.com/tpope/vim-surround.git" }
+    - { name: "visual-multi"          , target: "start" , repo: "https://github.com/mg979/vim-visual-multi.git" }
+    - { name: "visual-star-search"    , target: "start" , repo: "https://github.com/nelstrom/vim-visual-star-search.git" }
   loop_control:
     label: "{{ item.name }}"
 
@@ -28,3 +28,4 @@
     state: absent
   loop:
     - "replace-with-register"
+    - "paragraph-motion"
