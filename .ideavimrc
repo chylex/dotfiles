@@ -177,6 +177,7 @@ nnoremap g<CR> i<CR><Left><Esc>
 noremap C cc
 noremap D dd
 noremap < <<
+noremap > >>
 
 " Navigate with selection
 nmap <S-Up> v<Up>
