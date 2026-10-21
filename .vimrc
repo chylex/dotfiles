@@ -112,6 +112,16 @@ sunmap §
 " Enter visual block mode
 noremap <M-v> <C-v>
 
+" Invert soft wrap navigation bindings
+noremap 0 g0
+noremap g0 0
+
+noremap ^ g^
+noremap g^ ^
+
+noremap $ g$
+noremap g$ $
+
 " Navigate camel humps (https://github.com/vim-scripts/camelcasemotion)
 map L <Plug>CamelCaseMotion_w
 map H <Plug>CamelCaseMotion_b
